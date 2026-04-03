@@ -215,7 +215,7 @@
 
 .avBadge {
   position: absolute;
-  bottom: -15px;
+  bottom: -22px;
   left: 50%;
   transform: translateX(-50%);
   white-space: nowrap;
@@ -230,6 +230,7 @@
   border: 1px solid var(--cream-3);
   background: #fff;
   box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  z-index: 20;
 }
 
 .pulseGreen {

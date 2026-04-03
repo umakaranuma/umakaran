@@ -24,6 +24,10 @@ const dmMono = DM_Mono({
 export const metadata: Metadata = {
   title: "Umakaran Ampigaipagan · Senior Flutter Developer",
   description: "Senior Flutter Developer building production-grade mobile apps for Android & iOS.",
+  icons: {
+    icon: "/profile.jpeg",
+    apple: "/profile.jpeg",
+  },
 };
 
 export default function RootLayout({
