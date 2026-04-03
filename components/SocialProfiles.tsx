@@ -11,6 +11,7 @@ const profiles = [
   { name: "Email", handle: "umakaranuma1126@gmail.com", icon: "📧", url: "mailto:umakaranuma1126@gmail.com", color: "var(--teal-tint)" },
   { name: "pub.dev", handle: "2 packages published", icon: "📦", url: "https://pub.dev/packages/api_apptimus", color: "#e8f0fd" },
   { name: "PyPI", handle: "Projects", icon: "🐍", url: "https://pypi.org/manage/projects/", color: "#edf4fb" },
+  { name: "WhatsApp", handle: "+94 76 921 4278", icon: "💬", url: "https://wa.me/94769214278", color: "#e3f9e5" },
   { name: "Phone", handle: "+94 76 921 4278", icon: "📞", url: "tel:+94769214278", color: "#f0fdf4" }
 ];
 

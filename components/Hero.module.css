@@ -117,6 +117,7 @@
 .siGh:hover { color: #333; border-color: #333; }
 .siLi:hover { color: #0077b5; border-color: #0077b5; }
 .siPd:hover { color: #0553b1; border-color: #0553b1; }
+.siWa:hover { color: #25d366; border-color: #25d366; }
 
 .heroCtas {
   display: flex;

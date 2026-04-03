@@ -73,8 +73,43 @@
 
 .hireCtas {
   display: flex;
-  align-items: center;
-  gap: 2rem;
+  flex-wrap: wrap;
+  gap: var(--s4);
+}
+
+.emailForm {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 500px;
+}
+
+.formRow {
+  width: 100%;
+}
+
+.input, .textarea {
+  width: 100%;
+  background: white;
+  border: 1px solid var(--cream-3);
+  border-radius: var(--r-md);
+  padding: 0.88rem 1.1rem;
+  font-family: var(--ff-b);
+  font-size: 0.95rem;
+  color: var(--ink);
+  transition: all var(--t2) var(--ease);
+  outline: none;
+}
+
+.textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.input:focus, .textarea:focus {
+  border-color: var(--teal);
+  box-shadow: 0 0 0 4px var(--teal-tint);
 }
 
 .btnOutlineW {

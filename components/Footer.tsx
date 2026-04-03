@@ -1,11 +1,19 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Reveal from "./Reveal";
 import styles from "./Footer.module.css";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const [subject, setSubject] = useState("");
+  const [body, setBody] = useState("");
+
+  const handleSendEmail = (e: React.FormEvent) => {
+    e.preventDefault();
+    const mailtoUrl = `mailto:umakaranuma1126@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailtoUrl;
+  };
 
   return (
     <>
@@ -35,10 +43,31 @@ const Footer = () => {
                 </div>
               </div>
 
-              <div className={styles.hireCtas}>
-                 <a href="mailto:umakaranuma1126@gmail.com" className="btn btn--teal btn--sm">Start a Project</a>
-                  <a href="https://www.linkedin.com/in/umakaran-ampigaipagan-a91075213/" target="_blank" rel="noopener" className={`btn btn--sm ${styles.btnOutlineW}`}>LinkedIn</a>
-              </div>
+              <form onSubmit={handleSendEmail} className={styles.emailForm}>
+                <div className={styles.formRow}>
+                  <input 
+                    type="text" 
+                    placeholder="Subject" 
+                    value={subject}
+                    onChange={(e) => setSubject(e.target.value)}
+                    className={styles.input}
+                    required
+                  />
+                </div>
+                <div className={styles.formRow}>
+                  <textarea 
+                    placeholder="Tell me about your project..." 
+                    value={body}
+                    onChange={(e) => setBody(e.target.value)}
+                    className={styles.textarea}
+                    required
+                  />
+                </div>
+                <div className={styles.hireCtas}>
+                  <button type="submit" className="btn btn--teal btn--sm">Start a Project</button>
+                  <a href="https://wa.me/94769214278" target="_blank" rel="noopener" className={`btn btn--sm ${styles.btnOutlineW}`}>WhatsApp</a>
+                </div>
+              </form>
             </Reveal>
 
             <div className={styles.hireSrvs}>
@@ -67,6 +96,7 @@ const Footer = () => {
             <a href="https://github.com/umakaranuma" target="_blank" rel="noopener">GitHub</a>
             <a href="https://gitlab.com/umakaran" target="_blank" rel="noopener">GitLab</a>
             <a href="https://www.linkedin.com/in/umakaran-ampigaipagan-a91075213/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://wa.me/94769214278" target="_blank" rel="noopener">WhatsApp</a>
             <a href="mailto:umakaranuma1126@gmail.com">Email</a>
             <a href="https://pub.dev/packages/api_apptimus" target="_blank" rel="noopener">pub.dev</a>
             <a href="#hire">Hire Me</a>
