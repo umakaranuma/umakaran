@@ -22,9 +22,9 @@ const packages = [
   {
     plat: "PyPI · Python",
     icon: <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" style={{ transform: "rotate(180deg)" }}><path d="m18 15-6-6-6 6"/></svg>,
-    name: "Python Utility",
-    desc: "Python packages focused on automation and backend efficiency. Check my PyPI profile for the latest releases.",
-    url: "https://pypi.org/manage/projects/"
+    name: "djmigrator",
+    desc: "A Django utility for seamless migration management. Resolves complex migration conflicts and automates schema updates with just one command.",
+    url: "https://pypi.org/project/djmigrator/"
   }
 ];
 
