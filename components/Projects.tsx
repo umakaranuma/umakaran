@@ -11,8 +11,7 @@ const projects = [
     name: "Finemart",
     desc: "Full-featured e-commerce app with secure payment gateway, cart management, and real-time order tracking. Built from scratch with Clean Architecture and BLoC for predictable state across complex checkout flows.",
     tags: ["Flutter", "BLoC", "REST API", "Clean Architecture", "Dio", "Firebase"],
-    origin: "Apptimus Tech (Pvt) Ltd.",
-    featured: true
+    origin: "Apptimus Tech (Pvt) Ltd."
   },
   {
     num: "02",
@@ -109,8 +108,8 @@ const Projects = () => {
 
         <div className={styles.bento}>
           <div className={styles.bentoTop}>
-            {projects.slice(0, 2).map((p, idx) => (
-              <Reveal key={p.num} delay={idx * 0.1} className={`${styles.pc} ${p.featured ? styles.pcFeat : ""}`}>
+            {projects.slice(0, 2).map((p) => (
+              <div key={p.num} className={styles.pc}>
                 <div className={styles.pcBody}>
                   <div className={styles.pnum}>{p.num}</div>
                   <p className={styles.pkick}>{p.kick}</p>
@@ -136,7 +135,7 @@ const Projects = () => {
                     )}
                   </div>
                 </div>
-              </Reveal>
+              </div>
             ))}
           </div>
 
