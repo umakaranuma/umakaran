@@ -20,7 +20,8 @@ const projects = [
     name: "Ryba",
     desc: "Real-time messaging with Ably WebSockets, offline SQLite caching, and push notifications. Zero message loss on poor connectivity.",
     tags: ["Ably", "SQLite", "BLoC", "FCM", "Offline-first"],
-    origin: "Apptimus Tech (Pvt) Ltd."
+    origin: "Apptimus Tech (Pvt) Ltd.",
+    link: "https://play.google.com/store/apps/details?id=com.starfish.ryba&pcampaignid=web_share"
   },
   {
     num: "03",
@@ -28,7 +29,8 @@ const projects = [
     name: "MedLearning",
     desc: "Subscription medical e-learning with video streaming, Stripe billing, progress tracking & offline Hive caching.",
     tags: ["Stripe", "Firebase", "Video Streaming", "Hive"],
-    origin: "Code94 Labs (Pvt) Ltd · Contract"
+    origin: "Code94 Labs (Pvt) Ltd · Contract",
+    link: "https://play.google.com/store/apps/details?id=com.medlearning.medlearningmobile&pcampaignid=web_share"
   },
   {
     num: "04",
@@ -45,7 +47,8 @@ const projects = [
     name: "Moura",
     desc: "Online e-learning platform enabling educational content delivery, course management, and progress tracking for learners.",
     tags: ["Flutter", "E-Learning", "REST API", "Clean Architecture"],
-    origin: "Apptimus Tech (Pvt) Ltd."
+    origin: "Apptimus Tech (Pvt) Ltd.",
+    link: "https://play.google.com/store/apps/details?id=com.mlearn.mouraeducation&pcampaignid=web_share"
   },
   {
     num: "06",
@@ -70,7 +73,8 @@ const projects = [
     desc: "Personal finance management app to track expenses, manage budgets, and monitor savings with intuitive charts.",
     tags: ["Flutter", "Provider", "Charts", "Local Storage"],
     origin: "Personal Project",
-    live: true
+    live: true,
+    link: "https://play.google.com/store/apps/details?id=com.fynux.finzo&pcampaignid=web_share"
   },
   {
     num: "09",
@@ -79,7 +83,8 @@ const projects = [
     desc: "Powerful photo editing application with filters, adjustments, and creative tools to transform photos with ease.",
     tags: ["Flutter", "Image Processing", "Filters", "Canvas"],
     origin: "Personal Project",
-    live: true
+    live: true,
+    link: "https://gitlab.com/fynux.bussiness-group/snap_champ"
   },
   {
     num: "10",
@@ -88,7 +93,8 @@ const projects = [
     desc: "Sleek and feature-rich music player with playlist management, equalizer controls, and seamless audio playback.",
     tags: ["Flutter", "Audio Player", "Equalizer", "Playlist"],
     origin: "Personal Project",
-    live: true
+    live: true,
+    link: "https://gitlab.com/umakaran/mp3_player"
   }
 ];
 
@@ -123,6 +129,11 @@ const Projects = () => {
                     ) : (
                       <span className={styles.porigin}><span className={styles.pdot} />{p.origin}</span>
                     )}
+                    {p.link && (
+                      <a href={p.link} target="_blank" rel="noopener" className={styles.pLink}>
+                        View Project ↗
+                      </a>
+                    )}
                   </div>
                 </div>
               </Reveal>
@@ -144,6 +155,11 @@ const Projects = () => {
                   </div>
                   <div className={styles.pfoot}>
                     <span className={styles.porigin}><span className={styles.pdot} />{p.origin}</span>
+                    {p.link && (
+                      <a href={p.link} target="_blank" rel="noopener" className={styles.pLink}>
+                        View Project ↗
+                      </a>
+                    )}
                   </div>
                 </div>
               </Reveal>

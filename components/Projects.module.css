@@ -110,6 +110,23 @@
   background: var(--cream-3);
 }
 
+.pLink {
+  font-family: var(--ff-m);
+  font-size: 0.72rem;
+  color: var(--teal);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all var(--t2) var(--ease);
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.pLink:hover {
+  color: var(--teal-2);
+  transform: translateX(3px);
+}
+
 .pulseGreen {
   width: 8px;
   height: 8px;
