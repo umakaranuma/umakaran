@@ -25,8 +25,8 @@ export const metadata: Metadata = {
   title: "Umakaran Ampigaipagan · Senior Flutter Developer",
   description: "Senior Flutter Developer building production-grade mobile apps for Android & iOS.",
   icons: {
-    icon: "/profile.jpeg",
-    apple: "/profile.jpeg",
+    icon: "/icon.png",
+    apple: "/icon.png",
   },
 };
 
