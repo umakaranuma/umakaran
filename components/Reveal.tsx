@@ -2,16 +2,17 @@
 
 import React, { useEffect, useRef } from "react";
 
-interface RevealProps {
+interface RevealProps extends React.HTMLAttributes<HTMLElement> {
   children: React.ReactNode;
   delay?: number;
   className?: string;
   tag?: keyof JSX.IntrinsicElements;
+  [key: string]: any;
 }
 
-const Reveal = ({ children, delay = 0, className = "", tag = "div" }: RevealProps) => {
+const Reveal = ({ children, delay = 0, className = "", tag = "div", ...rest }: RevealProps) => {
   const ref = useRef<HTMLElement>(null);
-  const Tag = tag;
+  const Tag = tag as any;
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -42,6 +43,7 @@ const Reveal = ({ children, delay = 0, className = "", tag = "div" }: RevealProp
       ref={ref as any}
       className={`rv ${className}`}
       style={{ transitionDelay: `${delay}s` }}
+      {...rest}
     >
       {children}
     </Tag>

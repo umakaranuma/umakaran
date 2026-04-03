@@ -53,11 +53,11 @@ const Hero = () => {
           </div>
 
           <Reveal delay={0.4} className={styles.heroCtas}>
-            <a href="#hire" className="btn btn--teal">Hire Me</a>
+            <a href="#hire" className="btn btn--ink">Hire Me</a>
             <a href="#work" className={`btn ${styles.btnOutline}`}>View Projects</a>
-            <a href="mailto:umakaranuma1126@gmail.com" className={`btn ${styles.btnOutline}`}>
-              <svg width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-              Email Me
+            <a href="/cv.pdf" download className={`btn ${styles.btnOutline}`}>
+              <svg width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download CV
             </a>
           </Reveal>
         </div>
@@ -66,8 +66,11 @@ const Hero = () => {
           <div className={styles.avWrap}>
             <div className={styles.avOuter}>
               <div className={styles.avInner}>
-                <div className={styles.avI}>UA</div>
-                <div className={styles.avISub}>FLUTTER · DEV</div>
+                <img src="/profile.jpeg" alt="Umakaran Ampigaipagan" className={styles.avImg} />
+                <div className={styles.avFallback}>
+                  <div className={styles.avI}>UA</div>
+                  <div className={styles.avISub}>FLUTTER · DEV</div>
+                </div>
               </div>
             </div>
             <div className={styles.avBadge}>

@@ -24,7 +24,7 @@ const Navbar = () => {
       <div className={styles.navInner}>
         <Link href="/" className={styles.brand}>
           <div className={styles.navAv}>
-            <span className={styles.navAvI}>UA</span>
+            <img src="/profile.jpeg" alt="UA" className={styles.navAvImg} />
           </div>
           <span className={styles.navName}>Umakaran A.</span>
         </Link>

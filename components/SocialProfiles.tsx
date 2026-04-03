@@ -26,8 +26,16 @@ const SocialProfiles = () => {
 
         <div className={styles.profGrid}>
           {profiles.map((p, i) => (
-            <Reveal key={p.name} delay={i * 0.05} className={styles.profCard}>
-              <a href={p.url} target="_blank" rel="noopener" className={styles.profInner}>
+            <Reveal 
+              key={p.name} 
+              delay={i * 0.05} 
+              className={styles.profCard}
+              tag="a"
+              href={p.url}
+              target="_blank"
+              rel="noopener"
+            >
+              <div className={styles.profInner}>
                 <div className={styles.profIcon} style={{ background: p.color }}>
                    {/* Fallback to emoji icons as used in original */}
                    <span style={{ fontSize: '1.5rem' }}>{p.icon}</span>
@@ -37,7 +45,7 @@ const SocialProfiles = () => {
                   <div className={styles.profHandle}>{p.handle}</div>
                 </div>
                 <div className={styles.profArrow}>↗</div>
-              </a>
+              </div>
             </Reveal>
           ))}
         </div>

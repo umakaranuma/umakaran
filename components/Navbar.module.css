@@ -34,23 +34,22 @@
 }
 
 .navAv {
-  width: 38px;
-  height: 38px;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
-  background: var(--cream-2);
-  border: 1px solid var(--cream-3);
+  background: var(--ink);
+  border: 2px solid var(--teal-tint2);
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  position: relative;
+  flex-shrink: 0;
 }
 
-.navAvI {
-  font-family: var(--ff-d);
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--ink-3);
+.navAvImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .navName {
