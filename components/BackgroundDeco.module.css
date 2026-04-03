@@ -1,0 +1,14 @@
+.bgDeco {
+  position: fixed;
+  bottom: -4rem;
+  right: -2rem;
+  font-family: var(--ff-d);
+  font-size: min(20vw, 18rem);
+  font-weight: 600;
+  color: var(--cream-2);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  z-index: -1;
+  letter-spacing: -0.05em;
+}

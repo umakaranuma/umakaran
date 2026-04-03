@@ -1,0 +1,65 @@
+.footer {
+  background: var(--ink);
+  padding: 4rem 0 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+.footerInner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--s6);
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.footerTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 3rem;
+}
+.fBrand {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.fLogo {
+  font-family: var(--ff-d);
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: #fff;
+  letter-spacing: -0.04em;
+}
+.fTag {
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.4);
+  max-width: 300px;
+  line-height: 1.6;
+}
+.fLinks {
+  display: flex;
+  gap: 4rem;
+}
+.fCol { display: flex; flex-direction: column; gap: 1rem; }
+.fColH { font-family: var(--ff-m); font-size: 0.72rem; color: var(--teal-3); letter-spacing: 0.1em; text-transform: uppercase; }
+.fA { font-size: 0.88rem; color: rgba(255, 255, 255, 0.7); transition: color var(--t1) var(--ease); }
+.fA:hover { color: #fff; }
+
+.footerBot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  font-family: var(--ff-m);
+  font-size: 0.68rem;
+  color: rgba(255, 255, 255, 0.3);
+  letter-spacing: 0.03em;
+}
+.fCopy { display: flex; align-items: center; gap: 0.5rem; }
+.fHeart { color: #ff4b2b; }
+
+@media (max-width: 900px) {
+  .footerTop { flex-direction: column; gap: 3rem; }
+  .fLinks { gap: 3rem; }
+}
+@media (max-width: 600px) { .fLinks { width: 100%; justify-content: space-between; } .footerBot { flex-direction: column; gap: 1rem; align-items: flex-start; } }

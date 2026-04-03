@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Umakaran Ampigaipagan — Senior Flutter Developer. Cross-platform mobile apps for Android & iOS. Available for hire.">
+<title>Umakaran Ampigaipagan · Senior Flutter Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0c0c0b;--ink-2:#2e2e28;--ink-3:#616158;--ink-4:#9a9a8e;--ink-5:#c4c4b8;
+  --cream:#faf8f3;--cream-2:#f3f0e7;--cream-3:#e8e3d6;--cream-4:#d5cfc0;
+  --teal:#1a7a6e;--teal-2:#22998a;--teal-3:#2ab8a5;
+  --teal-tint:rgba(26,122,110,.08);--teal-tint2:rgba(26,122,110,.14);
+  --blue:#1a4fff;--orange:#e8420a;--green:#16a34a;--amber:#b45309;--purple:#7c3aed;
+  --ff-d:'Fraunces',Georgia,serif;--ff-b:'DM Sans',system-ui,sans-serif;--ff-m:'DM Mono',monospace;
+  --s1:.25rem;--s2:.5rem;--s3:.75rem;--s4:1rem;--s5:1.5rem;--s6:2rem;--s7:3rem;--s8:4.5rem;--s9:6rem;
+  --r-sm:6px;--r-md:10px;--r-lg:16px;--r-xl:22px;--r-f:9999px;
+  --ease:cubic-bezier(.16,1,.3,1);--t1:160ms;--t2:300ms;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--ff-b);background:var(--cream);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+
+.wrap{max-width:1200px;margin:0 auto;padding:0 var(--s6)}
+.wrap-lg{max-width:1400px;margin:0 auto;padding:0 var(--s6)}
+.section{padding:var(--s9) 0}
+.section--alt{background:var(--cream-2)}
+
+.t-display{font-family:var(--ff-d);font-size:clamp(3rem,7.5vw,6rem);font-weight:300;line-height:.96;letter-spacing:-.04em}
+.t-h1{font-family:var(--ff-d);font-size:clamp(2rem,4vw,3.2rem);font-weight:300;line-height:1.06;letter-spacing:-.022em}
+.t-cap{font-family:var(--ff-b);font-size:.72rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.t-sub{font-family:var(--ff-b);font-size:1.05rem;font-weight:600;color:var(--teal);padding-bottom:.38rem;border-bottom:2.5px solid var(--teal-3);display:inline-block}
+em.hi{font-style:italic;color:var(--teal-2)}
+
+/* --- chips --- */
+.chip{display:inline-flex;align-items:center;gap:.4rem;font-size:.78rem;padding:.26rem .7rem;border-radius:var(--r-f);background:var(--cream-2);border:1px solid var(--cream-3);color:var(--ink-2);transition:all var(--t1) var(--ease);white-space:nowrap;cursor:default}
+.chip:hover{border-color:var(--teal-3);color:var(--teal)}
+.chip--teal{background:var(--teal-tint);border-color:rgba(26,122,110,.2);color:var(--teal)}
+.chip--dk{background:var(--ink-2);border-color:var(--ink-3);color:#e8e8e4;font-family:var(--ff-m);font-size:.74rem}
+
+/* --- skill pill (wide, icon+label) --- */
+.sk-pill{display:flex;align-items:center;gap:.65rem;padding:.65rem 1rem;border-radius:var(--r-md);background:#fff;border:1px solid var(--cream-3);color:var(--ink-2);font-size:.88rem;font-weight:500;transition:all var(--t1) var(--ease)}
+.sk-pill:hover{border-color:var(--teal-3);box-shadow:0 4px 14px rgba(0,0,0,.05)}
+
+/* --- buttons --- */
+.btn{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--ff-b);font-size:.88rem;font-weight:600;padding:.75rem 1.65rem;border-radius:var(--r-f);transition:all var(--t1) var(--ease);border:1.5px solid transparent;line-height:1;white-space:nowrap;cursor:pointer}
+.btn--ink{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+.btn--ink:hover{background:var(--teal);border-color:var(--teal);transform:translateY(-1px);box-shadow:0 8px 24px rgba(26,122,110,.25)}
+.btn--teal{background:var(--teal);color:#fff;border-color:var(--teal)}
+.btn--teal:hover{background:var(--teal-2);transform:translateY(-1px);box-shadow:0 8px 24px rgba(26,122,110,.28)}
+.btn--outline{background:transparent;color:var(--ink);border-color:var(--cream-3)}
+.btn--outline:hover{border-color:var(--teal);color:var(--teal)}
+.btn--outline-dk{background:transparent;color:rgba(255,255,255,.7);border-color:rgba(255,255,255,.2)}
+.btn--outline-dk:hover{border-color:var(--teal-3);color:var(--teal-3)}
+
+/* --- pulse --- */
+.pulse{display:inline-block;width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.pulse--green{background:var(--green);animation:blink 2.3s ease-in-out infinite}
+.pulse--teal{background:var(--teal-3);animation:blink 2.3s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+
+/* --- reveal --- */
+.rv{opacity:0;transform:translateY(20px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.07s}.rv.d2{transition-delay:.14s}.rv.d3{transition-delay:.21s}
+.rv.d4{transition-delay:.28s}.rv.d5{transition-delay:.35s}
+
+/* ============================================================ NAV */
+.nav{position:fixed;inset:0 0 auto;z-index:300;background:rgba(250,248,243,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:border-color var(--t2)}
+.nav.scrolled{border-color:var(--cream-3)}
+.nav-inner{max-width:1400px;margin:0 auto;padding:0 var(--s6);height:62px;display:flex;align-items:center;justify-content:space-between;gap:var(--s4)}
+.nav-brand{display:flex;align-items:center;gap:.65rem}
+.nav-av{width:34px;height:34px;border-radius:50%;background:var(--ink);border:2px solid var(--teal-tint2);overflow:hidden;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.nav-av img{width:100%;height:100%;object-fit:cover}
+.nav-av-i{font-family:var(--ff-d);font-size:.66rem;color:var(--cream)}
+.nav-name{font-family:var(--ff-b);font-size:.9rem;font-weight:600;color:var(--ink)}
+.nav-links{display:flex;align-items:center;gap:.05rem}
+.nav-a{font-size:.83rem;color:var(--ink-3);padding:.38rem .78rem;border-radius:var(--r-f);transition:all var(--t1) var(--ease)}
+.nav-a:hover{color:var(--ink);background:var(--cream-2)}
+.nav-hire{font-size:.82rem;font-weight:600;color:#fff;background:var(--teal);padding:.44rem 1.1rem;border-radius:var(--r-f);margin-left:.4rem;transition:background var(--t1) var(--ease)}
+.nav-hire:hover{background:var(--teal-2)}
+
+/* ============================================================ HERO */
+.hero{min-height:100svh;display:grid;grid-template-columns:1fr 400px;align-items:center;gap:var(--s8);padding:7rem var(--s6) 4rem;max-width:1400px;margin:0 auto}
+.hero-role{font-family:var(--ff-b);font-size:1rem;font-weight:600;color:var(--teal);letter-spacing:.02em;margin-bottom:var(--s5);display:flex;align-items:center;gap:.6rem}
+.hero-name{font-family:var(--ff-d);font-size:clamp(2.8rem,7vw,6rem);font-weight:300;line-height:.96;letter-spacing:-.04em;margin-bottom:var(--s5)}
+.hero-name .l2{display:block;padding-left:3rem}
+.hero-desc{font-size:1rem;font-weight:300;line-height:1.8;color:var(--ink-2);max-width:500px;margin-bottom:var(--s6)}
+
+/* social icons row */
+.soc-row{display:flex;align-items:center;gap:.55rem;flex-wrap:wrap;margin-bottom:var(--s6)}
+.si{width:44px;height:44px;border-radius:var(--r-md);display:flex;align-items:center;justify-content:center;border:1.5px solid var(--cream-3);background:#fff;transition:all var(--t1) var(--ease);flex-shrink:0}
+.si:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(0,0,0,.1)}
+.si--email:hover{background:var(--teal);border-color:var(--teal)}
+.si--email:hover path,.si--email:hover rect{stroke:#fff}
+.si--gh:hover{background:#24292e;border-color:#24292e}
+.si--gh:hover path{fill:#fff}
+.si--gl:hover{background:#fc6d26;border-color:#fc6d26}
+.si--gl:hover path{fill:#fff}
+.si--li:hover{background:#0077b5;border-color:#0077b5}
+.si--li:hover path{fill:#fff}
+.si--pd:hover{background:#0553b1;border-color:#0553b1}
+.si--pd:hover path{fill:#fff}
+.si--py:hover{background:#4b8bbe;border-color:#4b8bbe}
+.si--py:hover path{fill:#fff}
+.si--ph:hover{background:var(--green);border-color:var(--green)}
+.si--ph:hover path{stroke:#fff}
+.si--tw:hover{background:#1d9bf0;border-color:#1d9bf0}
+.si--tw:hover path{fill:#fff}
+
+.hero-ctas{display:flex;gap:.75rem;flex-wrap:wrap}
+
+/* hero right */
+.hero-right{display:flex;flex-direction:column;align-items:center;gap:var(--s5)}
+.av-wrap{position:relative}
+.av-outer{width:280px;height:280px;border-radius:50%;padding:5px;background:conic-gradient(var(--teal-3) 0deg,rgba(42,184,165,.15) 180deg,var(--teal-3) 360deg);animation:spin 9s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.av-inner{width:100%;height:100%;border-radius:50%;background:var(--cream-2);border:4px solid #fff;overflow:hidden;display:flex;align-items:center;justify-content:center;position:relative}
+.av-inner img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;border-radius:50%}
+.av-i{font-family:var(--ff-d);font-size:4.2rem;font-weight:200;color:var(--ink);letter-spacing:-.04em;line-height:1;text-align:center;position:relative;z-index:1}
+.av-i-sub{font-family:var(--ff-m);font-size:.52rem;color:var(--ink-4);letter-spacing:.22em;margin-top:.4rem;text-align:center;position:relative;z-index:1}
+.av-badge{position:absolute;bottom:-12px;left:50%;transform:translateX(-50%);white-space:nowrap;display:flex;align-items:center;gap:.45rem;font-family:var(--ff-m);font-size:.68rem;color:var(--ink-3);padding:.38rem .9rem;border-radius:var(--r-f);border:1px solid var(--cream-3);background:#fff;letter-spacing:.05em}
+
+.hero-stats{background:#fff;border:1px solid var(--cream-3);border-radius:var(--r-lg);overflow:hidden;position:relative;width:100%;margin-top:.8rem}
+.hero-stats::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--teal),var(--blue),var(--orange))}
+.stats-inner{display:grid;grid-template-columns:repeat(3,1fr)}
+.stat{padding:.9rem .6rem;text-align:center;border-right:1px solid var(--cream-2)}
+.stat:last-child{border-right:none}
+.stat-n{font-family:var(--ff-d);font-size:1.8rem;font-weight:300;letter-spacing:-.03em;line-height:1;color:var(--ink)}
+.stat-l{font-family:var(--ff-m);font-size:.6rem;color:var(--ink-4);letter-spacing:.06em;margin-top:.2rem}
+
+.bg-deco{position:fixed;bottom:-4rem;right:-2rem;font-family:var(--ff-d);font-size:min(20vw,18rem);font-weight:600;color:var(--cream-2);line-height:1;pointer-events:none;user-select:none;z-index:-1;letter-spacing:-.05em}
+
+/* ============================================================ MARQUEE */
+.mq-wrap{background:var(--ink);padding:.85rem 0;overflow:hidden}
+.mq-track{display:flex;gap:2.5rem;animation:mq 26s linear infinite;white-space:nowrap}
+.mq-track:hover{animation-play-state:paused}
+@keyframes mq{to{transform:translateX(-50%)}}
+.mq-item{display:flex;align-items:center;gap:.8rem;font-family:var(--ff-d);font-size:.95rem;font-weight:200;font-style:italic;color:#383835;flex-shrink:0}
+.mq-dot{width:4px;height:4px;border-radius:50%;background:var(--teal-3)}
+
+/* ============================================================ ABOUT */
+.about-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:5rem;align-items:start}
+.about-text p{color:var(--ink-2);margin-bottom:var(--s4);font-size:.97rem;line-height:1.8}
+.about-chips{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:var(--s5)}
+.loc-tag{display:inline-flex;align-items:center;gap:.45rem;font-family:var(--ff-m);font-size:.72rem;color:var(--ink-3);margin-top:var(--s4)}
+
+.about-panel{background:#fff;border:1px solid var(--cream-3);border-radius:var(--r-xl);padding:var(--s5) var(--s6);display:flex;flex-direction:column;gap:var(--s5)}
+.apl{font-family:var(--ff-m);font-size:.66rem;color:var(--ink-4);letter-spacing:.09em;text-transform:uppercase;display:block;margin-bottom:.25rem}
+.apv{font-size:.92rem;color:var(--ink-2);font-weight:500}
+.apv--teal{color:var(--teal);font-weight:600}
+.ap-div{border:none;border-top:1px solid var(--cream-2)}
+
+/* ============================================================ SERVICES */
+.sec-head{margin-bottom:var(--s7)}
+.sec-head .t-cap{display:block;margin-bottom:.65rem}
+.srv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
+.srv-card{background:#fff;border:1.5px solid var(--cream-3);border-radius:var(--r-xl);padding:2rem 1.8rem;display:flex;flex-direction:column;gap:1rem;transition:all var(--t2) var(--ease);position:relative;overflow:hidden;cursor:pointer}
+.srv-card::after{content:'Click for details';position:absolute;top:1rem;right:1rem;font-family:var(--ff-m);font-size:.63rem;color:var(--teal);background:var(--teal-tint);border:1px solid rgba(26,122,110,.2);padding:.22rem .6rem;border-radius:var(--r-f);letter-spacing:.04em;opacity:0;transform:translateY(-4px);transition:all var(--t1) var(--ease)}
+.srv-card:hover::after{opacity:1;transform:none}
+.srv-card:hover{border-color:var(--teal-3);box-shadow:0 12px 40px rgba(26,122,110,.1);transform:translateY(-4px)}
+.srv-icon{width:60px;height:60px;border-radius:var(--r-lg);background:var(--teal-tint);border:1px solid rgba(26,122,110,.15);display:flex;align-items:center;justify-content:center;font-size:1.6rem;flex-shrink:0}
+.srv-name{font-family:var(--ff-b);font-size:1rem;font-weight:600;color:var(--ink);line-height:1.3}
+.srv-desc{font-size:.84rem;color:var(--ink-3);line-height:1.7;flex:1}
+
+/* modal */
+.m-overlay{position:fixed;inset:0;background:rgba(12,12,11,.55);z-index:400;display:flex;align-items:center;justify-content:center;padding:var(--s6);backdrop-filter:blur(4px);opacity:0;pointer-events:none;transition:opacity var(--t2) var(--ease)}
+.m-overlay.open{opacity:1;pointer-events:all}
+.m-box{background:#fff;border-radius:var(--r-xl);padding:2.5rem;max-width:520px;width:100%;position:relative;transform:scale(.96) translateY(12px);transition:transform var(--t2) var(--ease)}
+.m-overlay.open .m-box{transform:scale(1) translateY(0)}
+.m-close{position:absolute;top:1.2rem;right:1.2rem;width:32px;height:32px;border-radius:50%;border:1px solid var(--cream-3);background:var(--cream);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;color:var(--ink-3);transition:all var(--t1) var(--ease)}
+.m-close:hover{background:var(--cream-2);color:var(--ink)}
+.m-icon{font-size:2.5rem;margin-bottom:.8rem}
+.m-title{font-family:var(--ff-d);font-size:1.5rem;font-weight:400;letter-spacing:-.015em;color:var(--ink);margin-bottom:.6rem}
+.m-body{font-size:.9rem;color:var(--ink-2);line-height:1.75;margin-bottom:1.4rem}
+.m-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.5rem}
+
+/* ============================================================ PROJECTS */
+.bento{display:flex;flex-direction:column;gap:1rem}
+.bento-top{display:grid;grid-template-columns:1.5fr 1fr;gap:1rem}
+.bento-bot{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+
+.pc{background:#fff;border:1px solid var(--cream-3);border-radius:var(--r-xl);overflow:hidden;transition:all var(--t2) var(--ease)}
+.pc:hover{border-color:var(--ink);transform:translateY(-4px);box-shadow:0 16px 48px rgba(12,12,11,.09)}
+
+.pc--feat{display:grid;grid-template-rows:auto 1fr}
+.pc-vis{min-height:240px;background:var(--ink);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.vis-glow{position:absolute;inset:0;background:radial-gradient(ellipse at 55% 35%,rgba(42,184,165,.2) 0%,transparent 65%)}
+.feat-badge{position:absolute;top:1rem;left:1rem;display:inline-flex;align-items:center;gap:.4rem;background:rgba(42,184,165,.16);color:var(--teal-3);font-family:var(--ff-m);font-size:.63rem;padding:.28rem .65rem;border-radius:var(--r-f);border:1px solid rgba(42,184,165,.3);letter-spacing:.07em}
+.phone-stack{display:flex;gap:1rem;align-items:center;position:relative;z-index:1}
+.ph{border-radius:18px;border:1.5px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 24px 60px rgba(0,0,0,.5);gap:.3rem}
+.ph-lg{width:108px;height:192px;font-size:2rem}
+.ph-sm{width:82px;height:152px;font-size:1.4rem;opacity:.4}
+.ph-bar{width:26px;height:3.5px;border-radius:2px;background:rgba(255,255,255,.12)}
+
+.pc-body{padding:1.8rem 2rem}
+.pc-body--feat{padding:2rem 2.2rem}
+.pnum{font-family:var(--ff-d);font-size:3.5rem;font-weight:200;color:var(--cream-3);line-height:1;letter-spacing:-.04em;margin-bottom:.3rem;transition:color var(--t2) var(--ease)}
+.pc:hover .pnum{color:var(--ink-4)}
+.pkick{font-family:var(--ff-m);font-size:.67rem;color:var(--ink-4);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.3rem}
+.pname{font-family:var(--ff-d);font-size:1.4rem;font-weight:400;letter-spacing:-.015em;color:var(--ink);margin-bottom:.5rem}
+.pdesc{font-size:.85rem;color:var(--ink-2);line-height:1.7;margin-bottom:1rem}
+.ptags{display:flex;flex-wrap:wrap;gap:.35rem;margin-bottom:1rem}
+.pmet{display:flex;gap:1.6rem;padding:.9rem 0;border-top:1px solid var(--cream-2);border-bottom:1px solid var(--cream-2);margin-bottom:1rem}
+.m-n{font-family:var(--ff-d);font-size:1.5rem;font-weight:300;letter-spacing:-.03em;color:var(--ink);line-height:1}
+.m-l{font-family:var(--ff-m);font-size:.63rem;color:var(--ink-4);letter-spacing:.05em;margin-top:.18rem}
+.pfoot{display:flex;align-items:center;justify-content:space-between;padding-top:.8rem;border-top:1px solid var(--cream-2)}
+.porigin{font-family:var(--ff-m);font-size:.68rem;color:var(--ink-4);display:flex;align-items:center;gap:.4rem}
+.pdot{width:6px;height:6px;border-radius:50%;background:var(--ink-4);display:inline-block}
+
+.pc--side .pc-vis{height:150px}
+.pc--side .pc-body{padding:1.4rem 1.6rem}
+.pc--side .pname{font-size:1.15rem;margin-bottom:.35rem}
+.pc--side .pdesc{font-size:.82rem;margin-bottom:.8rem}
+
+.pc--sm .pc-body{padding:1.4rem 1.6rem}
+.pc--sm .pname{font-size:1.05rem;margin-bottom:.3rem}
+.pc--sm .pdesc{font-size:.81rem;margin-bottom:.8rem}
+.pc--sm .pnum{font-size:2.8rem}
+
+.pc--live{border-color:rgba(22,163,74,.22)}
+.pc--live:hover{border-color:var(--green)}
+.live-bar{position:absolute;top:0;left:0;right:0;height:2.5px;background:var(--green)}
+
+/* ============================================================ SKILLS */
+.skills-wrap{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem}
+.skill-section{display:flex;flex-direction:column;gap:2rem}
+.sk-group{}
+.sk-label-row{margin-bottom:1rem}
+.sk-sub-badge{display:inline-flex;font-family:var(--ff-m);font-size:.72rem;padding:.26rem .75rem;border-radius:var(--r-f);background:var(--ink-2);color:#d8d8d4;border:1px solid var(--ink-3);margin-bottom:.65rem;cursor:default}
+.sk-pills{display:grid;grid-template-columns:repeat(3,1fr);gap:.55rem}
+.sk-pills--2{grid-template-columns:repeat(2,1fr)}
+
+/* currently learning */
+.learn-pills{display:grid;grid-template-columns:repeat(3,1fr);gap:.55rem}
+.learn-pill{display:flex;align-items:center;gap:.6rem;padding:.65rem 1rem;border-radius:var(--r-md);background:#fff;border:1px solid var(--cream-3);font-size:.86rem;font-weight:500;color:var(--ink-2);transition:all var(--t1) var(--ease)}
+.learn-pill:hover{border-color:var(--purple);color:var(--purple)}
+
+/* ============================================================ EXPERIENCE */
+.exp-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.tl{position:relative;padding-left:1.8rem}
+.tl-line{position:absolute;left:0;top:6px;bottom:0;width:1px;background:var(--cream-3)}
+.tl-item{position:relative;padding-bottom:2.6rem}
+.tl-item:last-child{padding-bottom:0}
+.tl-dot{position:absolute;left:-2.3rem;top:4px;width:10px;height:10px;border-radius:50%;background:var(--cream);border:2px solid var(--cream-4)}
+.tl-item.cur .tl-dot{border-color:var(--teal);background:var(--teal);box-shadow:0 0 0 3px rgba(26,122,110,.14)}
+.tl-date{font-family:var(--ff-m);font-size:.68rem;color:var(--ink-4);margin-bottom:.42rem;letter-spacing:.06em}
+.tl-role{font-family:var(--ff-d);font-size:1.2rem;font-weight:400;letter-spacing:-.01em;color:var(--ink);margin-bottom:.2rem}
+.tl-co{font-size:.87rem;color:var(--ink-3);margin-bottom:.75rem}
+.tl-desc{font-size:.85rem;color:var(--ink-2);line-height:1.72}
+
+.ach-grid{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}
+.ach{background:#fff;border:1px solid var(--cream-3);border-radius:var(--r-lg);padding:1.2rem 1.3rem;transition:all var(--t1) var(--ease);position:relative;overflow:hidden}
+.ach::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:transparent;transition:background var(--t1) var(--ease)}
+.ach:hover{border-color:var(--ink);transform:translateY(-2px)}
+.ach:hover::after{background:var(--teal)}
+.ach-icon{font-size:1.2rem;margin-bottom:.5rem}
+.ach-n{font-family:var(--ff-d);font-size:1.9rem;font-weight:300;letter-spacing:-.03em;color:var(--ink);line-height:1;margin-bottom:.25rem}
+.ach-lbl{font-size:.83rem;font-weight:600;color:var(--ink);margin-bottom:.18rem}
+.ach-desc{font-size:.75rem;color:var(--ink-3);line-height:1.55}
+.ach--wide{grid-column:1/-1}
+
+/* ============================================================ OSS */
+.oss-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.oss-card{background:#fff;border:1px solid var(--cream-3);border-radius:var(--r-lg);padding:1.6rem;display:flex;flex-direction:column;gap:.85rem;transition:all var(--t1) var(--ease)}
+.oss-card:hover{border-color:var(--teal);background:#f8fffe;transform:translateY(-2px);box-shadow:0 8px 24px rgba(26,122,110,.08)}
+.oss-plat{display:flex;align-items:center;gap:.45rem;font-family:var(--ff-m);font-size:.65rem;color:var(--ink-4);letter-spacing:.08em;text-transform:uppercase}
+.oss-name{font-family:var(--ff-d);font-size:1.12rem;font-weight:400;letter-spacing:-.01em;color:var(--ink)}
+.oss-desc{font-size:.82rem;color:var(--ink-2);line-height:1.65;flex:1}
+.oss-link{display:inline-flex;align-items:center;gap:.35rem;font-family:var(--ff-m);font-size:.7rem;color:var(--teal);letter-spacing:.04em}
+.oss-link:hover{text-decoration:underline}
+
+/* ============================================================ HIRE BAND */
+.hire-band{background:var(--ink);padding:var(--s8) 0;position:relative;overflow:hidden}
+.hire-band::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 25% 50%,rgba(42,184,165,.1) 0%,transparent 60%)}
+.hire-inner{max-width:1200px;margin:0 auto;padding:0 var(--s6);display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.hire-cap{font-family:var(--ff-m);font-size:.7rem;color:var(--teal-3);letter-spacing:.12em;text-transform:uppercase;margin-bottom:var(--s4);display:block}
+.hire-title{font-family:var(--ff-d);font-size:clamp(2rem,4vw,3.2rem);font-weight:300;letter-spacing:-.025em;color:#fff;line-height:1.05;margin-bottom:var(--s4)}
+.hire-title em{font-style:italic;color:var(--teal-3)}
+.hire-desc{font-size:.95rem;color:rgba(255,255,255,.45);line-height:1.75;margin-bottom:var(--s5)}
+.hire-ctas{display:flex;gap:.75rem;flex-wrap:wrap}
+.hire-items{display:flex;flex-direction:column;gap:.85rem}
+.hire-item{display:flex;align-items:flex-start;gap:.95rem;padding:1.2rem 1.4rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:var(--r-lg);transition:border-color var(--t1) var(--ease)}
+.hire-item:hover{border-color:rgba(42,184,165,.3)}
+.hi-icon{font-size:1.4rem;flex-shrink:0;margin-top:.05rem}
+.hi-lbl{font-size:.92rem;font-weight:600;color:#e8e8e4;margin-bottom:.18rem}
+.hi-desc{font-size:.81rem;color:rgba(255,255,255,.38);line-height:1.6}
+
+/* ============================================================ PROFILES */
+.prof-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.85rem}
+.prof-card{background:#fff;border:1px solid var(--cream-3);border-radius:var(--r-lg);padding:1.25rem;display:flex;flex-direction:column;gap:.7rem;transition:all var(--t1) var(--ease)}
+.prof-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(12,12,11,.08)}
+.prof-icon{width:40px;height:40px;border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.prof-name{font-family:var(--ff-b);font-size:.93rem;font-weight:600;color:var(--ink)}
+.prof-handle{font-family:var(--ff-m);font-size:.66rem;color:var(--ink-4)}
+.prof-arrow{font-size:.9rem;color:var(--ink-5);margin-left:auto;transition:color var(--t1) var(--ease)}
+.prof-card:hover .prof-arrow{color:var(--ink-3)}
+.prof-card.gh:hover{border-color:#4d5562}.prof-card.gl:hover{border-color:#fc6d26}
+.prof-card.li:hover{border-color:#0a66c2}.prof-card.em:hover{border-color:var(--teal)}
+.prof-card.pd:hover{border-color:#0553b1}.prof-card.py:hover{border-color:#4b8bbe}
+.prof-card.ph:hover{border-color:var(--green)}.prof-card.tw:hover{border-color:#1d9bf0}
+
+/* ============================================================ CERTS */
+.cert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.cert-card{background:#fff;border:1px solid var(--cream-3);border-radius:var(--r-lg);padding:1.5rem;display:flex;align-items:flex-start;gap:1rem;transition:border-color var(--t1) var(--ease)}
+.cert-card:hover{border-color:var(--teal-3)}
+.cert-badge{width:44px;height:44px;border-radius:var(--r-md);background:var(--teal-tint);border:1px solid rgba(26,122,110,.15);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+.cert-name{font-size:.9rem;font-weight:600;color:var(--ink);margin-bottom:.2rem}
+.cert-by{font-family:var(--ff-m);font-size:.67rem;color:var(--ink-4)}
+
+/* ============================================================ FOOTER */
+footer{border-top:1px solid var(--cream-3);padding:var(--s4) var(--s6);max-width:1400px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+.ft-brand{font-family:var(--ff-d);font-size:.87rem;font-weight:300;color:var(--ink-3)}
+.ft-links{display:flex;gap:1.4rem}
+.ft-a{font-family:var(--ff-m);font-size:.67rem;color:var(--ink-4);transition:color var(--t1) var(--ease)}
+.ft-a:hover{color:var(--teal)}
+
+/* ============================================================ RESPONSIVE */
+@media(max-width:1100px){
+  .hero{grid-template-columns:1fr;padding-top:8rem;gap:3rem}
+  .hero-right{flex-direction:row;align-items:center;gap:2rem;width:100%}
+  .av-outer{width:180px;height:180px}
+  .hero-stats{flex:1;margin-top:0}
+  .about-grid,.exp-grid{grid-template-columns:1fr;gap:2.5rem}
+  .srv-grid{grid-template-columns:1fr 1fr}
+  .bento-top{grid-template-columns:1fr}
+  .bento-bot{grid-template-columns:1fr 1fr}
+  .skills-wrap{grid-template-columns:1fr;gap:2.5rem}
+  .sk-pills{grid-template-columns:repeat(2,1fr)}
+  .prof-grid{grid-template-columns:repeat(2,1fr)}
+  .cert-grid{grid-template-columns:1fr 1fr}
+  .learn-pills{grid-template-columns:1fr 1fr}
+  .hire-inner{grid-template-columns:1fr;gap:3rem}
+  .oss-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:700px){
+  :root{--s9:4rem;--s8:3rem}
+  .nav-links{display:none}
+  .wrap,.wrap-lg{padding:0 1.2rem}
+  .hero{padding:7rem 1.2rem 3rem}
+  .hero-right{flex-direction:column}
+  .srv-grid,.bento-bot,.oss-grid,.cert-grid,.prof-grid{grid-template-columns:1fr}
+  .bento-top{grid-template-columns:1fr}
+  .ach-grid{grid-template-columns:1fr}
+  .ach--wide{grid-column:auto}
+  .learn-pills,.sk-pills,.sk-pills--2{grid-template-columns:1fr 1fr}
+  footer{flex-direction:column;gap:.75rem;text-align:center}
+  .ft-links{flex-wrap:wrap;justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<div class="bg-deco" aria-hidden="true">Flutter</div>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-brand" aria-label="Home">
+      <div class="nav-av">
+        <!-- PHOTO: replace with <img src="photo.jpg" alt="Umakaran"> -->
+        <span class="nav-av-i">UA</span>
+      </div>
+      <span class="nav-name">Umakaran A.</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about"      class="nav-a">About</a></li>
+      <li><a href="#services"   class="nav-a">Services</a></li>
+      <li><a href="#work"       class="nav-a">Work</a></li>
+      <li><a href="#skills"     class="nav-a">Skills</a></li>
+      <li><a href="#experience" class="nav-a">Experience</a></li>
+      <li><a href="#oss"        class="nav-a">Open Source</a></li>
+      <li><a href="#hire"       class="nav-hire">Hire Me</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero wrap-lg" aria-label="Hero">
+  <div>
+    <div class="hero-role rv">
+      <span class="pulse pulse--teal"></span>
+      Senior Flutter Developer · Available for hire
+    </div>
+    <h1 class="hero-name rv d1">
+      Umakaran<br>
+      <em class="hi"><span class="l2">Ampigaipagan</span></em>
+    </h1>
+    <p class="hero-desc rv d2">I build production-grade cross-platform mobile apps for Android &amp; iOS — clean architecture, BLoC state management, Firebase ecosystem, and obsessive performance tuning. Based in Jaffna, Sri Lanka · working globally.</p>
+
+    <!-- Social icons — reference style -->
+    <div class="soc-row rv d3" role="list" aria-label="Social profiles">
+      <a href="mailto:umakaranuma1126@gmail.com" class="si si--email" aria-label="Email">
+        <svg width="18" height="18" fill="none" stroke="#555" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+      </a>
+      <a href="https://github.com/YOUR_USERNAME" target="_blank" rel="noopener" class="si si--gh" aria-label="GitHub">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#333"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+      </a>
+      <a href="https://gitlab.com/YOUR_USERNAME" target="_blank" rel="noopener" class="si si--gl" aria-label="GitLab">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#666"><path d="m21.98 9.686-2.539-7.814a.467.467 0 0 0-.889 0L16.55 7.44H7.45L5.448 1.872a.467.467 0 0 0-.889 0L2.02 9.686l-.001.005a3.274 3.274 0 0 0 1.085 3.667l.007.005.018.014 3.994 2.991 1.976 1.496 1.203.909a.541.541 0 0 0 .655 0l1.203-.909 1.976-1.496 4.012-3.004.007-.006a3.274 3.274 0 0 0 1.085-3.667z"/></svg>
+      </a>
+      <a href="https://linkedin.com/in/YOUR_USERNAME" target="_blank" rel="noopener" class="si si--li" aria-label="LinkedIn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#0077b5"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </a>
+      <a href="https://pub.dev/publishers/YOUR_DOMAIN" target="_blank" rel="noopener" class="si si--pd" aria-label="pub.dev">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#0553b1"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+      </a>
+      <a href="https://pypi.org/user/YOUR_USERNAME" target="_blank" rel="noopener" class="si si--py" aria-label="PyPI">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#4b8bbe"><path d="M12.022 0C5.446 0 5.845 2.808 5.845 2.808l.007 2.909h6.27v.874H3.676S0 6.158 0 12.8s3.168 6.408 3.168 6.408h1.89v-3.082s-.102-3.167 3.115-3.167h5.37s3.013.048 3.013-2.913V3.083S16.97 0 12.022 0zm-2.97 1.783a.97.97 0 1 1 0 1.94.97.97 0 0 1 0-1.94zM11.978 24c6.576 0 6.177-2.808 6.177-2.808l-.007-2.909h-6.27v-.874h8.446S24 17.842 24 11.2s-3.168-6.408-3.168-6.408h-1.89v3.082s.102 3.167-3.115 3.167h-5.37s-3.013-.048-3.013 2.913v5.963S7.03 24 11.978 24zm2.97-1.783a.97.97 0 1 1 0-1.94.97.97 0 0 1 0 1.94z"/></svg>
+      </a>
+      <a href="tel:+94769214278" class="si si--ph" aria-label="Call">
+        <svg width="18" height="18" fill="none" stroke="#555" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6.06 6.06l1.27-.78a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      </a>
+      <a href="https://twitter.com/YOUR_USERNAME" target="_blank" rel="noopener" class="si si--tw" aria-label="Twitter/X">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#666"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.74l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+    </div>
+
+    <div class="hero-ctas rv d4">
+      <a href="#hire" class="btn btn--ink">Hire Me</a>
+      <a href="#work" class="btn btn--outline">View Projects</a>
+      <a href="mailto:umakaranuma1126@gmail.com" class="btn btn--outline">
+        <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        Email Me
+      </a>
+    </div>
+  </div>
+
+  <!-- Photo + Stats -->
+  <div class="hero-right rv d2">
+    <div class="av-wrap">
+      <div class="av-outer">
+        <div class="av-inner">
+          <!--
+            ═══════════════════════════
+            PHOTO: replace below with
+            <img src="your-photo.jpg" alt="Umakaran Ampigaipagan">
+            Recommended: 480×480px square
+            ═══════════════════════════
+          -->
+          <div class="av-i">UA</div>
+          <div class="av-i-sub">FLUTTER · DEV</div>
+        </div>
+      </div>
+      <div class="av-badge">
+        <span class="pulse pulse--green"></span>
+        Available for projects
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stats-inner">
+        <div class="stat"><div class="stat-n">3+</div><div class="stat-l">Years exp</div></div>
+        <div class="stat"><div class="stat-n">5+</div><div class="stat-l">Apps shipped</div></div>
+        <div class="stat"><div class="stat-n">3</div><div class="stat-l">OSS packages</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="mq-wrap" aria-hidden="true">
+  <div class="mq-track">
+    <span class="mq-item"><span class="mq-dot"></span>Clean Architecture</span>
+    <span class="mq-item"><span class="mq-dot"></span>BLoC State Management</span>
+    <span class="mq-item"><span class="mq-dot"></span>Android &amp; iOS</span>
+    <span class="mq-item"><span class="mq-dot"></span>Firebase Ecosystem</span>
+    <span class="mq-item"><span class="mq-dot"></span>CI/CD Pipelines</span>
+    <span class="mq-item"><span class="mq-dot"></span>Open Source Contributor</span>
+    <span class="mq-item"><span class="mq-dot"></span>95%+ Test Coverage</span>
+    <span class="mq-item"><span class="mq-dot"></span>Dart &amp; Flutter Expert</span>
+    <span class="mq-item"><span class="mq-dot"></span>Clean Architecture</span>
+    <span class="mq-item"><span class="mq-dot"></span>BLoC State Management</span>
+    <span class="mq-item"><span class="mq-dot"></span>Android &amp; iOS</span>
+    <span class="mq-item"><span class="mq-dot"></span>Firebase Ecosystem</span>
+    <span class="mq-item"><span class="mq-dot"></span>CI/CD Pipelines</span>
+    <span class="mq-item"><span class="mq-dot"></span>Open Source Contributor</span>
+    <span class="mq-item"><span class="mq-dot"></span>95%+ Test Coverage</span>
+    <span class="mq-item"><span class="mq-dot"></span>Dart &amp; Flutter Expert</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="t-cap">// About me</span><h2 class="t-h1">Building apps that<br><em class="hi">actually ship</em></h2></div>
+    <div class="about-grid">
+      <div>
+        <p class="rv d1" style="color:var(--ink-2);font-size:.97rem;line-height:1.8;margin-bottom:1rem">I'm a Senior Flutter Developer with 3+ years building production-grade mobile applications for Android and iOS. I specialise in <strong>Clean Architecture</strong> and <strong>BLoC state management</strong> — the kind that stays maintainable six months after launch.</p>
+        <p class="rv d2" style="color:var(--ink-2);font-size:.97rem;line-height:1.8;margin-bottom:1rem">My work spans e-commerce platforms, real-time messaging, subscription-based learning, and enterprise workflow engines — each one deployed and actively used. I lead all phases: architecture decisions, CI/CD setup, to App Store and Play Store publishing.</p>
+        <p class="rv d3" style="color:var(--ink-2);font-size:.97rem;line-height:1.8">Beyond writing code, I establish team standards, mentor junior developers, and maintain open-source packages on Pub.dev and PyPI.</p>
+        <div class="about-chips rv d4">
+          <span class="chip chip--teal">Android &amp; iOS</span><span class="chip chip--teal">BLoC Expert</span>
+          <span class="chip chip--teal">Open Source</span><span class="chip">Firebase</span>
+          <span class="chip">CI/CD</span><span class="chip">Stripe</span><span class="chip">Ably WebSocket</span>
+          <span class="chip">Pub.dev</span><span class="chip">PyPI</span>
+        </div>
+        <div class="loc-tag rv d5">
+          <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Jaffna, Sri Lanka · Remote friendly · Worldwide
+        </div>
+      </div>
+      <div class="about-panel rv d2">
+        <div><span class="apl">Current position</span><span class="apv">Flutter Developer @ Apptimus Tech</span></div>
+        <hr class="ap-div">
+        <div><span class="apl">Availability</span><span class="apv apv--teal">● Open to opportunities</span></div>
+        <hr class="ap-div">
+        <div><span class="apl">Location</span><span class="apv">Jaffna, Sri Lanka</span></div>
+        <hr class="ap-div">
+        <div><span class="apl">Work type</span><span class="apv">Remote · Contract · Full-time</span></div>
+        <hr class="ap-div">
+        <div><span class="apl">Experience</span><span class="apv">3+ years · 5+ production apps</span></div>
+        <hr class="ap-div">
+        <div><span class="apl">Contact</span><a href="mailto:umakaranuma1126@gmail.com" style="font-size:.88rem;color:var(--teal);font-weight:600">umakaranuma1126@gmail.com</a></div>
+        <a href="#hire" class="btn btn--teal" style="justify-content:center">
+          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6.06 6.06l1.27-.78a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Hire Me
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section section--alt" id="services">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="t-cap">// What I offer</span><h2 class="t-h1">Services</h2></div>
+    <div class="srv-grid">
+      <div class="srv-card rv"      data-m="s1"><div class="srv-icon">📱</div><h3 class="srv-name">Cross-Platform Mobile App Development</h3><p class="srv-desc">End-to-end Flutter apps for Android &amp; iOS from a single codebase. Clean Architecture, BLoC, full Firebase integration, and App Store/Play Store publishing.</p></div>
+      <div class="srv-card rv d1"   data-m="s2"><div class="srv-icon">⚡</div><h3 class="srv-name">Feature Enhancement &amp; App Optimization</h3><p class="srv-desc">Improve your existing Flutter app — reduce startup time, fix memory leaks, upgrade architecture, and implement missing features.</p></div>
+      <div class="srv-card rv d2"   data-m="s3"><div class="srv-icon">🔌</div><h3 class="srv-name">API &amp; Backend Integration</h3><p class="srv-desc">Connect Flutter apps to REST APIs, GraphQL, WebSocket, and Firebase. Robust error handling, token refresh, and secure auth flows via Dio.</p></div>
+      <div class="srv-card rv d1"   data-m="s4"><div class="srv-icon">💳</div><h3 class="srv-name">Payment Gateway &amp; In-App Purchases</h3><p class="srv-desc">Integrate Stripe, payment gateways, and subscription billing into your Flutter app, with full transaction management.</p></div>
+      <div class="srv-card rv d2"   data-m="s5"><div class="srv-icon">🔧</div><h3 class="srv-name">App Maintenance &amp; Technical Support</h3><p class="srv-desc">Ongoing maintenance, bug fixes, dependency upgrades, Crashlytics monitoring, and performance tuning for both platforms.</p></div>
+      <div class="srv-card rv d3"   data-m="s6"><div class="srv-icon">🏗️</div><h3 class="srv-name">Architecture Consulting &amp; Code Review</h3><p class="srv-desc">Audit your codebase, refactor to Clean Architecture, establish BLoC patterns, set up CI/CD pipelines, and define team coding standards.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Modal -->
+<div class="m-overlay" id="m-overlay" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="m-box">
+    <button class="m-close" id="m-close" aria-label="Close">✕</button>
+    <div class="m-icon" id="mi"></div>
+    <h3 class="m-title" id="mt"></h3>
+    <p class="m-body" id="mb"></p>
+    <div class="m-tags" id="mk"></div>
+    <a href="mailto:umakaranuma1126@gmail.com" class="btn btn--teal" style="width:100%;justify-content:center">Enquire about this service</a>
+  </div>
+</div>
+
+<!-- PROJECTS -->
+<section class="section" id="work">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="t-cap">// Selected work</span><h2 class="t-h1">Projects that<br>ship to production</h2></div>
+    <div class="bento">
+      <div class="bento-top">
+        <!-- 01 Finemart -->
+        <article class="pc pc--feat rv" aria-label="Finemart">
+          <div class="pc-vis">
+            <div class="vis-glow" aria-hidden="true"></div>
+            <span class="feat-badge"><svg width="9" height="9" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>FEATURED</span>
+            <div class="phone-stack" aria-hidden="true">
+              <div class="ph ph-sm"><span>📦</span><div class="ph-bar"></div></div>
+              <div class="ph ph-lg"><span>🛒</span><div class="ph-bar"></div></div>
+            </div>
+          </div>
+          <div class="pc-body pc-body--feat">
+            <div class="pnum">01</div>
+            <p class="pkick">E-commerce platform</p>
+            <h3 class="pname">Finemart</h3>
+            <p class="pdesc">Full-featured e-commerce app with secure payment gateway, cart management, and real-time order tracking. Built from scratch with Clean Architecture and BLoC for predictable state across complex checkout flows.</p>
+            <div class="pmet">
+              <div><div class="m-n">40%</div><div class="m-l">Fewer state bugs</div></div>
+              <div><div class="m-n">30%</div><div class="m-l">Faster startup</div></div>
+              <div><div class="m-n">95%+</div><div class="m-l">Code coverage</div></div>
+            </div>
+            <div class="ptags">
+              <span class="chip chip--teal">Flutter</span><span class="chip chip--teal">BLoC</span>
+              <span class="chip">REST API</span><span class="chip">Payment Gateway</span><span class="chip">Clean Architecture</span><span class="chip">Dio</span><span class="chip">Firebase</span>
+            </div>
+            <div class="pfoot"><span class="porigin"><span class="pdot"></span>Apptimus Tech (Pvt) Ltd.</span></div>
+          </div>
+        </article>
+        <!-- 02 Ryba -->
+        <article class="pc pc--side rv d1" aria-label="Ryba">
+          <div class="pc-vis" style="background:linear-gradient(135deg,#0b0f1a,#0e1a2e);font-size:2.5rem">
+            <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 60%,rgba(42,184,165,.15) 0%,transparent 70%)"></div>
+            <span style="position:relative;z-index:1">💬</span>
+          </div>
+          <div class="pc-body">
+            <div class="pnum">02</div>
+            <p class="pkick">Real-time messaging</p>
+            <h3 class="pname">Ryba</h3>
+            <p class="pdesc">Real-time messaging with Ably WebSockets, offline SQLite caching, and push notifications. Zero message loss on poor connectivity.</p>
+            <div class="ptags"><span class="chip chip--teal">Ably</span><span class="chip chip--teal">SQLite</span><span class="chip">BLoC</span><span class="chip">FCM</span><span class="chip">Offline-first</span></div>
+            <div class="pfoot"><span class="porigin"><span class="pdot"></span>Apptimus Tech</span></div>
+          </div>
+        </article>
+      </div>
+      <div class="bento-bot">
+        <!-- 03 MedLearning -->
+        <article class="pc pc--sm rv" aria-label="MedLearning">
+          <div class="pc-body">
+            <div class="pnum">03</div>
+            <p class="pkick" style="color:var(--teal)">E-learning · Subscriptions</p>
+            <h3 class="pname">MedLearning</h3>
+            <p class="pdesc">Subscription medical e-learning with video streaming, Stripe billing, progress tracking &amp; offline Hive caching.</p>
+            <div class="ptags"><span class="chip chip--teal">Stripe</span><span class="chip chip--teal">Firebase</span><span class="chip">Video Streaming</span><span class="chip">Hive</span></div>
+            <div class="pfoot"><span class="porigin"><span class="pdot"></span>Apptimus Tech</span></div>
+          </div>
+        </article>
+        <!-- 04 Empower -->
+        <article class="pc pc--sm rv d1" aria-label="Empower">
+          <div class="pc-body">
+            <div class="pnum">04</div>
+            <p class="pkick" style="color:var(--amber)">Enterprise workflow</p>
+            <h3 class="pname">Empower</h3>
+            <p class="pdesc">Workflow-based assistance management with a custom engine orchestrating complex multi-step state processes. Modular Clean Architecture.</p>
+            <div class="ptags"><span class="chip chip--teal">Workflow Engine</span><span class="chip">Clean Arch</span><span class="chip">MVVM</span></div>
+            <div class="pfoot"><span class="porigin"><span class="pdot"></span>Code94 Labs · Contract</span></div>
+          </div>
+        </article>
+        <!-- 05 Personal -->
+        <article class="pc pc--sm pc--live rv d2" style="position:relative" aria-label="Personal app">
+          <div class="live-bar" aria-hidden="true"></div>
+          <div class="pc-body">
+            <div class="pnum" style="color:rgba(22,163,74,.18)">05</div>
+            <p class="pkick" style="color:var(--green)">Personal · Live in production</p>
+            <h3 class="pname" style="color:var(--green)">Personal App</h3>
+            <p class="pdesc">Solo-built Flutter app — full product lifecycle from architecture to App Store &amp; Play Store publishing. Details on request.</p>
+            <div class="ptags">
+              <span class="chip" style="border-color:rgba(22,163,74,.2);color:var(--green)">Flutter</span>
+              <span class="chip" style="border-color:rgba(22,163,74,.2);color:var(--green)">Firebase</span>
+              <span class="chip">Solo-built</span><span class="chip">Published</span>
+            </div>
+            <div class="pfoot">
+              <span class="porigin" style="color:var(--green)"><span class="pulse pulse--green"></span>Live</span>
+              <a href="mailto:umakaranuma1126@gmail.com?subject=Personal App Details" style="font-family:var(--ff-m);font-size:.68rem;color:var(--green)">Details →</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="section section--alt" id="skills">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="t-cap">// Technical expertise</span><h2 class="t-h1">Skills</h2></div>
+    <div class="skills-wrap">
+      <div class="rv">
+        <div style="margin-bottom:2rem">
+          <div class="sk-label-row"><span class="t-sub">Programming Languages</span></div>
+          <div class="sk-pills">
+            <div class="sk-pill">🎯 Dart</div>
+            <div class="sk-pill">🐍 Python</div>
+            <div class="sk-pill">🤖 Kotlin</div>
+          </div>
+        </div>
+        <div style="margin-bottom:2rem">
+          <div class="sk-label-row"><span class="t-sub">Mobile Development</span></div>
+          <div style="margin-bottom:.6rem"><span class="sk-sub-badge">Framework</span></div>
+          <div class="sk-pills sk-pills--2" style="margin-bottom:.8rem">
+            <div class="sk-pill">📱 Flutter</div>
+            <div class="sk-pill">🔥 Firebase</div>
+          </div>
+          <div style="margin-bottom:.6rem"><span class="sk-sub-badge">State Management</span></div>
+          <div class="sk-pills sk-pills--2">
+            <div class="sk-pill">🧱 BLoC</div>
+            <div class="sk-pill">🔄 Riverpod</div>
+            <div class="sk-pill">📦 Provider</div>
+            <div class="sk-pill">⚡ GetX</div>
+          </div>
+        </div>
+        <div>
+          <div class="sk-label-row"><span class="t-sub">Architecture</span></div>
+          <div class="sk-pills sk-pills--2">
+            <div class="sk-pill">🏗️ Clean Architecture</div>
+            <div class="sk-pill">🎨 MVVM</div>
+            <div class="sk-pill">📐 SOLID Principles</div>
+            <div class="sk-pill">🧩 Modular Design</div>
+          </div>
+        </div>
+      </div>
+      <div class="rv d2">
+        <div style="margin-bottom:2rem">
+          <div class="sk-label-row"><span class="t-sub">Networking &amp; APIs</span></div>
+          <div class="sk-pills">
+            <div class="sk-pill">🌐 REST APIs</div>
+            <div class="sk-pill">🚀 Dio</div>
+            <div class="sk-pill">📊 GraphQL</div>
+            <div class="sk-pill">🔌 WebSocket</div>
+            <div class="sk-pill">📋 JSON</div>
+            <div class="sk-pill">💬 Ably</div>
+          </div>
+        </div>
+        <div style="margin-bottom:2rem">
+          <div class="sk-label-row"><span class="t-sub">Local Storage</span></div>
+          <div class="sk-pills sk-pills--2">
+            <div class="sk-pill">🗄️ Hive</div>
+            <div class="sk-pill">💾 SQLite</div>
+            <div class="sk-pill">🔑 SharedPrefs</div>
+            <div class="sk-pill">📂 Drift</div>
+          </div>
+        </div>
+        <div style="margin-bottom:2rem">
+          <div class="sk-label-row"><span class="t-sub">CI/CD &amp; Testing</span></div>
+          <div class="sk-pills">
+            <div class="sk-pill">🐙 GitHub Actions</div>
+            <div class="sk-pill">✈️ Codemagic</div>
+            <div class="sk-pill">🔬 Bitrise</div>
+            <div class="sk-pill">🚦 Fastlane</div>
+            <div class="sk-pill">🧪 Unit Tests</div>
+            <div class="sk-pill">🎭 Widget Tests</div>
+          </div>
+        </div>
+        <div>
+          <div class="sk-label-row"><span class="t-sub" style="color:var(--purple);border-color:var(--purple)">Currently Learning</span></div>
+          <div class="learn-pills">
+            <div class="learn-pill">🎯 KMP (Kotlin Multiplatform)</div>
+            <div class="learn-pill">🖥️ Compose Multiplatform</div>
+            <div class="learn-pill">🏛️ Advanced Architecture</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="section" id="experience">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="t-cap">// Work history</span><h2 class="t-h1">Experience</h2></div>
+    <div class="exp-grid">
+      <div class="tl rv">
+        <div class="tl-line" aria-hidden="true"></div>
+        <div class="tl-item cur">
+          <div class="tl-dot" aria-hidden="true"></div>
+          <p class="tl-date">Jan 2023 — Present</p>
+          <h3 class="tl-role">Flutter Developer</h3>
+          <p class="tl-co">Apptimus Tech (Pvt) Ltd. · Jaffna, Sri Lanka</p>
+          <p class="tl-desc">Leading mobile development across multiple production applications. Architected scalable Flutter codebases with Clean Architecture and BLoC. Set up CI/CD pipelines on Codemagic and GitHub Actions. Established code review workflows and mentored 3 junior developers. Delivered Finemart, Ryba, and MedLearning from zero to store-published.</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot" aria-hidden="true"></div>
+          <p class="tl-date">Nov 2024 — Jan 2025</p>
+          <h3 class="tl-role">Flutter Developer · Contract</h3>
+          <p class="tl-co">Code94 Labs · Remote</p>
+          <p class="tl-desc">Contracted to design and build Empower — a complex workflow-based assistance management system with advanced state orchestration and modular Clean Architecture, delivered fully on schedule.</p>
+        </div>
+      </div>
+      <div class="rv d2">
+        <p class="t-cap" style="margin-bottom:1.2rem">Impact highlights</p>
+        <div class="ach-grid">
+          <div class="ach"><div class="ach-icon">📉</div><div class="ach-n">40%</div><p class="ach-lbl">Fewer state bugs</p><p class="ach-desc">BLoC &amp; Provider patterns across all apps</p></div>
+          <div class="ach"><div class="ach-icon">⚡</div><div class="ach-n">30%</div><p class="ach-lbl">Faster startup</p><p class="ach-desc">Lazy loading &amp; efficient widget rendering</p></div>
+          <div class="ach"><div class="ach-icon">✅</div><div class="ach-n">95%+</div><p class="ach-lbl">Code coverage</p><p class="ach-desc">Unit &amp; widget tests on all milestones</p></div>
+          <div class="ach"><div class="ach-icon">👥</div><div class="ach-n">3</div><p class="ach-lbl">Devs mentored</p><p class="ach-desc">Code reviews, standards &amp; quality</p></div>
+          <div class="ach ach--wide"><div class="ach-icon">🚀</div><div class="ach-n">5+</div><p class="ach-lbl">Production apps shipped</p><p class="ach-desc">All delivered on schedule to Play Store &amp; App Store</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OPEN SOURCE -->
+<section class="section section--alt" id="oss">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="t-cap">// Open source</span><h2 class="t-h1">Giving back to<br><em class="hi">the community</em></h2></div>
+    <div class="oss-grid">
+      <article class="oss-card rv d1">
+        <div class="oss-plat"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>pub.dev · Flutter</div>
+        <h3 class="oss-name">Package Name 01</h3>
+        <!-- SWAP: Replace with real package name and description -->
+        <p class="oss-desc">A Flutter package solving a specific developer pain point. Replace with your real package name and what it does for the Flutter community.</p>
+        <a href="https://pub.dev/packages/YOUR_PACKAGE_1" target="_blank" rel="noopener" class="oss-link">View on pub.dev ↗</a>
+      </article>
+      <article class="oss-card rv d2">
+        <div class="oss-plat"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>pub.dev · Flutter</div>
+        <h3 class="oss-name">Package Name 02</h3>
+        <p class="oss-desc">Second Flutter package on Pub.dev. Replace with your real package description and the problem it solves.</p>
+        <a href="https://pub.dev/packages/YOUR_PACKAGE_2" target="_blank" rel="noopener" class="oss-link">View on pub.dev ↗</a>
+      </article>
+      <article class="oss-card rv d3">
+        <div class="oss-plat"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="m18 15-6-6-6 6"/></svg>PyPI · Python</div>
+        <h3 class="oss-name">Package Name 03</h3>
+        <p class="oss-desc">Python package on PyPI showing cross-language range. Replace with your real package name and description.</p>
+        <a href="https://pypi.org/project/YOUR_PACKAGE_3" target="_blank" rel="noopener" class="oss-link">View on PyPI ↗</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- HIRE ME -->
+<section class="hire-band" id="hire">
+  <div class="hire-inner">
+    <div class="rv">
+      <span class="hire-cap">// Let's work together</span>
+      <h2 class="hire-title">Ready to build<br>something <em>great?</em></h2>
+      <p class="hire-desc">Whether you need a Flutter app from scratch, performance improvements, payment integrations, or a technical partner — I'm here. I respond within 24 hours.</p>
+      <div class="hire-ctas">
+        <a href="mailto:umakaranuma1126@gmail.com" class="btn btn--teal">
+          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          Email me
+        </a>
+        <a href="tel:+94769214278" class="btn btn--outline-dk">📞 +94 76 921 4278</a>
+        <a href="https://linkedin.com/in/YOUR_USERNAME" target="_blank" rel="noopener" class="btn btn--outline-dk">LinkedIn</a>
+      </div>
+    </div>
+    <div class="hire-items rv d2">
+      <div class="hire-item"><div class="hi-icon">📱</div><div><div class="hi-lbl">Mobile App Development</div><div class="hi-desc">Full Flutter apps for Android &amp; iOS, end to end</div></div></div>
+      <div class="hire-item"><div class="hi-icon">🔧</div><div><div class="hi-lbl">App Optimization &amp; Fixes</div><div class="hi-desc">Performance, architecture upgrades, bug fixes</div></div></div>
+      <div class="hire-item"><div class="hi-icon">🤝</div><div><div class="hi-lbl">Technical Consulting</div><div class="hi-desc">Code review, architecture audit, CI/CD setup</div></div></div>
+      <div class="hire-item"><div class="hi-icon">⏱️</div><div><div class="hi-lbl">Quick Response</div><div class="hi-desc">Responds within 24 hours · Remote · Worldwide</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROFILES / CONNECT -->
+<section class="section section--alt">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="t-cap">// Find me online</span><h2 class="t-h1">Developer profiles<br>&amp; social links</h2></div>
+    <div class="prof-grid">
+      <a href="https://github.com/YOUR_USERNAME" target="_blank" rel="noopener" class="prof-card gh" aria-label="GitHub"><div class="prof-icon" style="background:#f5f5f5"><svg width="22" height="22" viewBox="0 0 24 24" fill="#24292e"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg></div><div><div class="prof-name">GitHub</div><div class="prof-handle">@YOUR_USERNAME</div></div><div class="prof-arrow">↗</div></a>
+      <a href="https://gitlab.com/YOUR_USERNAME" target="_blank" rel="noopener" class="prof-card gl" aria-label="GitLab"><div class="prof-icon" style="background:#fff4ee"><svg width="22" height="22" viewBox="0 0 24 24" fill="#fc6d26"><path d="m21.98 9.686-2.539-7.814a.467.467 0 0 0-.889 0L16.55 7.44H7.45L5.448 1.872a.467.467 0 0 0-.889 0L2.02 9.686l-.001.005a3.274 3.274 0 0 0 1.085 3.667l.007.005.018.014 3.994 2.991 1.976 1.496 1.203.909a.541.541 0 0 0 .655 0l1.203-.909 1.976-1.496 4.012-3.004.007-.006a3.274 3.274 0 0 0 1.085-3.667z"/></svg></div><div><div class="prof-name">GitLab</div><div class="prof-handle">@YOUR_USERNAME</div></div><div class="prof-arrow">↗</div></a>
+      <a href="https://linkedin.com/in/YOUR_USERNAME" target="_blank" rel="noopener" class="prof-card li" aria-label="LinkedIn"><div class="prof-icon" style="background:#e8f4fd"><svg width="22" height="22" viewBox="0 0 24 24" fill="#0077b5"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></div><div><div class="prof-name">LinkedIn</div><div class="prof-handle">Umakaran Ampigaipagan</div></div><div class="prof-arrow">↗</div></a>
+      <a href="mailto:umakaranuma1126@gmail.com" class="prof-card em" aria-label="Email"><div class="prof-icon" style="background:var(--teal-tint)"><svg width="22" height="22" fill="none" stroke="#1a7a6e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></div><div><div class="prof-name">Email</div><div class="prof-handle">umakaranuma1126@gmail.com</div></div><div class="prof-arrow">↗</div></a>
+      <a href="https://pub.dev/publishers/YOUR_DOMAIN" target="_blank" rel="noopener" class="prof-card pd" aria-label="pub.dev"><div class="prof-icon" style="background:#e8f0fd"><svg width="22" height="22" viewBox="0 0 24 24" fill="#0553b1"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><div><div class="prof-name">pub.dev</div><div class="prof-handle">2 packages published</div></div><div class="prof-arrow">↗</div></a>
+      <a href="https://pypi.org/user/YOUR_USERNAME" target="_blank" rel="noopener" class="prof-card py" aria-label="PyPI"><div class="prof-icon" style="background:#edf4fb"><svg width="22" height="22" viewBox="0 0 24 24" fill="#4b8bbe"><path d="M12.022 0C5.446 0 5.845 2.808 5.845 2.808l.007 2.909h6.27v.874H3.676S0 6.158 0 12.8s3.168 6.408 3.168 6.408h1.89v-3.082s-.102-3.167 3.115-3.167h5.37s3.013.048 3.013-2.913V3.083S16.97 0 12.022 0zm-2.97 1.783a.97.97 0 1 1 0 1.94.97.97 0 0 1 0-1.94zM11.978 24c6.576 0 6.177-2.808 6.177-2.808l-.007-2.909h-6.27v-.874h8.446S24 17.842 24 11.2s-3.168-6.408-3.168-6.408h-1.89v3.082s.102 3.167-3.115 3.167h-5.37s-3.013-.048-3.013 2.913v5.963S7.03 24 11.978 24zm2.97-1.783a.97.97 0 1 1 0-1.94.97.97 0 0 1 0 1.94z"/></svg></div><div><div class="prof-name">PyPI</div><div class="prof-handle">1 package published</div></div><div class="prof-arrow">↗</div></a>
+      <a href="tel:+94769214278" class="prof-card ph" aria-label="Phone"><div class="prof-icon" style="background:#f0fdf4"><svg width="22" height="22" fill="none" stroke="#16a34a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6.06 6.06l1.27-.78a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><div><div class="prof-name">Phone</div><div class="prof-handle">+94 76 921 4278</div></div><div class="prof-arrow">↗</div></a>
+      <a href="https://twitter.com/YOUR_USERNAME" target="_blank" rel="noopener" class="prof-card tw" aria-label="Twitter/X"><div class="prof-icon" style="background:#e8f5fe"><svg width="22" height="22" viewBox="0 0 24 24" fill="#1d9bf0"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.74l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></div><div><div class="prof-name">Twitter / X</div><div class="prof-handle">@YOUR_USERNAME</div></div><div class="prof-arrow">↗</div></a>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS (bottom) -->
+<section class="section">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="t-cap">// Credentials</span><h2 class="t-h1">Certifications<br>&amp; Education</h2></div>
+    <div class="cert-grid">
+      <div class="cert-card rv d1"><div class="cert-badge">🎓</div><div><div class="cert-name">Google Associate Android Developer</div><div class="cert-by">Google · Certification</div></div></div>
+      <div class="cert-card rv d2"><div class="cert-badge">📱</div><div><div class="cert-name">Flutter &amp; Dart — The Complete Guide</div><div class="cert-by">Udemy · Certification</div></div></div>
+      <div class="cert-card rv d3"><div class="cert-badge">🏛️</div><div><div class="cert-name">National Diploma in Technology (IT)</div><div class="cert-by">University of Moratuwa · Sri Lanka</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="ft-brand">Umakaran Ampigaipagan · Senior Flutter Developer</span>
+  <nav class="ft-links" aria-label="Footer links">
+    <a href="https://github.com/YOUR_USERNAME"        target="_blank" rel="noopener" class="ft-a">GitHub</a>
+    <a href="https://gitlab.com/YOUR_USERNAME"        target="_blank" rel="noopener" class="ft-a">GitLab</a>
+    <a href="https://linkedin.com/in/YOUR_USERNAME"   target="_blank" rel="noopener" class="ft-a">LinkedIn</a>
+    <a href="mailto:umakaranuma1126@gmail.com"                         class="ft-a">Email</a>
+    <a href="https://pub.dev/publishers/YOUR_DOMAIN"  target="_blank" rel="noopener" class="ft-a">pub.dev</a>
+    <a href="#hire"                                                     class="ft-a">Hire Me</a>
+  </nav>
+</footer>
+
+<script>
+(function(){
+  // Nav scroll
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 20), {passive:true});
+
+  // Scroll reveal
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }});
+  }, {threshold:.07, rootMargin:'0px 0px -30px 0px'});
+  document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+  // Service modal data
+  const data = {
+    s1:{icon:'📱',title:'Cross-Platform Mobile App Development',body:'End-to-end Flutter application development for Android and iOS from a single codebase. I handle everything: UI/UX implementation, Clean Architecture setup, BLoC state management, Firebase integration, REST API connectivity, and full App Store/Play Store publishing with code signing and build flavors.',tags:['Flutter','Dart','Clean Architecture','BLoC','Firebase','REST APIs','CI/CD','Play Store','App Store']},
+    s2:{icon:'⚡',title:'Feature Enhancement & App Optimization',body:'Already have a Flutter app that needs improvement? I audit your codebase, identify bottlenecks, refactor to Clean Architecture patterns, and implement missing features. Past results: 30% faster startup and 40% fewer state bugs.',tags:['Performance Tuning','Code Refactoring','BLoC Migration','Lazy Loading','Memory Optimization']},
+    s3:{icon:'🔌',title:'API & Backend Integration',body:'Seamlessly connect your Flutter app to any backend. Robust REST API integration using Dio, token refresh mechanisms, secure auth flows, WebSocket connections via Ably, and GraphQL — with comprehensive error handling throughout.',tags:['REST APIs','GraphQL','WebSocket','Ably','Dio','Token Refresh','OAuth','Firebase']},
+    s4:{icon:'💳',title:'Payment Gateway & In-App Purchases',body:'Full payment integration for Flutter — Stripe subscriptions, one-time purchases, in-app purchases, and custom payment gateway SDKs. Implemented in live e-commerce and e-learning products with complete transaction management.',tags:['Stripe','Payment Gateway','Subscriptions','In-App Purchases','Transaction Management']},
+    s5:{icon:'🔧',title:'App Maintenance & Technical Support',body:'Ongoing maintenance for your Flutter app: dependency updates, SDK upgrades, bug fixes, Firebase Crashlytics monitoring, performance regression testing, and platform-specific issues on both Android and iOS.',tags:['Bug Fixes','Dependency Updates','Crashlytics','Performance Monitoring','Android','iOS']},
+    s6:{icon:'🏗️',title:'Architecture Consulting & Code Review',body:'I audit your Flutter codebase and provide a detailed report with actionable recommendations. Then help implement Clean Architecture, establish BLoC patterns, set up CI/CD on Codemagic/GitHub Actions, and mentor your developers.',tags:['Code Audit','Clean Architecture','CI/CD Setup','GitHub Actions','Codemagic','Team Standards','Mentoring']}
+  };
+
+  const overlay = document.getElementById('m-overlay');
+  const closeBtn = document.getElementById('m-close');
+
+  document.querySelectorAll('.srv-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const d = data[card.dataset.m]; if(!d) return;
+      document.getElementById('mi').textContent = d.icon;
+      document.getElementById('mt').textContent = d.title;
+      document.getElementById('mb').textContent = d.body;
+      document.getElementById('mk').innerHTML = d.tags.map(t =>
+        `<span style="display:inline-flex;font-family:var(--ff-m);font-size:.71rem;padding:.24rem .65rem;border-radius:9999px;background:var(--teal-tint);border:1px solid rgba(26,122,110,.18);color:var(--teal)">${t}</span>`
+      ).join('');
+      overlay.classList.add('open');
+      overlay.setAttribute('aria-hidden','false');
+    });
+  });
+
+  const closeModal = () => { overlay.classList.remove('open'); overlay.setAttribute('aria-hidden','true'); };
+  closeBtn.addEventListener('click', closeModal);
+  overlay.addEventListener('click', e => { if(e.target === overlay) closeModal(); });
+  document.addEventListener('keydown', e => { if(e.key === 'Escape') closeModal(); });
+})();
+</script>
+</body>
+</html>

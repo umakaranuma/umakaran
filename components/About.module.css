@@ -1,0 +1,55 @@
+.aboutGrid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+.aboutChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: var(--s5);
+}
+.locTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--ff-m);
+  font-size: 0.72rem;
+  color: var(--ink-3);
+  margin-top: var(--s4);
+}
+.aboutPanel {
+  background: #fff;
+  border: 1px solid var(--cream-3);
+  border-radius: var(--r-xl);
+  padding: var(--s5) var(--s6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s5);
+}
+.apl {
+  font-family: var(--ff-m);
+  font-size: 0.66rem;
+  color: var(--ink-4);
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+.apv {
+  font-size: 0.92rem;
+  color: var(--ink-2);
+  font-weight: 500;
+}
+.apvTeal {
+  color: var(--teal);
+  font-weight: 600;
+}
+.apDiv {
+  border: none;
+  border-top: 1px solid var(--cream-2);
+}
+@media (max-width: 1100px) {
+  .aboutGrid { grid-template-columns: 1fr; gap: 2.5rem; }
+}

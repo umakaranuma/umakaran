@@ -1,0 +1,32 @@
+.profGrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.85rem; }
+.profCard {
+  background: #fff;
+  border: 1px solid var(--cream-3);
+  border-radius: var(--r-lg);
+  transition: all var(--t1) var(--ease);
+}
+.profCardInner {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 1.25rem;
+    width: 100%;
+    text-decoration: none;
+}
+.profCard:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(12, 12, 11, 0.08); border-color: var(--teal-3); }
+.profIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--r-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.profName { font-family: var(--ff-b); font-size: 0.93rem; font-weight: 600; color: var(--ink); }
+.profHandle { font-family: var(--ff-m); font-size: 0.66rem; color: var(--ink-4); }
+.profArrow { font-size: 0.9rem; color: var(--ink-5); margin-left: auto; transition: color var(--t1) var(--ease); }
+.profCard:hover .profArrow { color: var(--ink-3); }
+
+@media (max-width: 1100px) { .profGrid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 700px) { .profGrid { grid-template-columns: 1fr; } }
