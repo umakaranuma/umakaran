@@ -162,11 +162,6 @@
   border-radius: 50%;
   padding: 6px;
   background: conic-gradient(var(--teal-3) 0deg, rgba(42, 184, 165, 0.15) 180deg, var(--teal-3) 360deg);
-  animation: spin 12s linear infinite;
-}
-
-@keyframes spin {
-  to { transform: rotate(360deg); }
 }
 
 .avInner {
