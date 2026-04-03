@@ -36,7 +36,7 @@ const Navbar = () => {
           <a href="#skills" className={styles.link}>Skills</a>
           <a href="#experience" className={styles.link}>Experience</a>
           <a href="#oss" className={styles.link}>Open Source</a>
-          <a href="#hire" className={`btn btn--teal ${styles.navBtn}`}>
+          <a href="#hire" className="btn btn--teal btn--sm">
             Hire Me
           </a>
         </div>

@@ -104,6 +104,11 @@ a {
   cursor: pointer;
 }
 
+.btn--sm {
+  padding: 0.44rem 1.1rem;
+  font-size: 0.82rem;
+}
+
 .btn--ink {
   background: var(--ink);
   color: var(--cream);

@@ -36,8 +36,8 @@ const Footer = () => {
               </div>
 
               <div className={styles.hireCtas}>
-                 <a href="mailto:umakaranuma1126@gmail.com" className="btn btn--teal">Start a Project</a>
-                 <a href="https://linkedin.com/in/YOUR_USERNAME" target="_blank" rel="noopener" className={styles.btnOutlineW}>LinkedIn</a>
+                 <a href="mailto:umakaranuma1126@gmail.com" className="btn btn--teal btn--sm">Start a Project</a>
+                  <a href="https://www.linkedin.com/in/umakaran-ampigaipagan-a91075213/" target="_blank" rel="noopener" className={`btn btn--sm ${styles.btnOutlineW}`}>LinkedIn</a>
               </div>
             </Reveal>
 
@@ -64,11 +64,11 @@ const Footer = () => {
         <div className={styles.footerInner}>
           <span className={styles.fBrand}>Umakaran Ampigaipagan · Senior Flutter Developer</span>
           <nav className={styles.fLinks}>
-            <a href="https://github.com/YOUR_USERNAME" target="_blank" rel="noopener">GitHub</a>
-            <a href="https://gitlab.com/YOUR_USERNAME" target="_blank" rel="noopener">GitLab</a>
-            <a href="https://linkedin.com/in/YOUR_USERNAME" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://github.com/umakaranuma" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://gitlab.com/umakaran" target="_blank" rel="noopener">GitLab</a>
+            <a href="https://www.linkedin.com/in/umakaran-ampigaipagan-a91075213/" target="_blank" rel="noopener">LinkedIn</a>
             <a href="mailto:umakaranuma1126@gmail.com">Email</a>
-            <a href="https://pub.dev/publishers/YOUR_DOMAIN" target="_blank" rel="noopener">pub.dev</a>
+            <a href="https://pub.dev/packages/api_apptimus" target="_blank" rel="noopener">pub.dev</a>
             <a href="#hire">Hire Me</a>
           </nav>
           <div className={styles.fLegal}>

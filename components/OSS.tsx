@@ -8,23 +8,23 @@ const packages = [
   {
     plat: "pub.dev · Flutter",
     icon: <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>,
-    name: "Package Name 01",
-    desc: "A Flutter package solving a specific developer pain point. Replace with your real package name and what it does for the Flutter community.",
-    url: "https://pub.dev/packages/YOUR_PACKAGE_1"
+    name: "api_apptimus",
+    desc: "A comprehensive Flutter package for simplifying API integration, handling requests, and response parsing with ease.",
+    url: "https://pub.dev/packages/api_apptimus"
   },
   {
     plat: "pub.dev · Flutter",
     icon: <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>,
-    name: "Package Name 02",
-    desc: "Second Flutter package on Pub.dev. Replace with your real package description and the problem it solves.",
-    url: "https://pub.dev/packages/YOUR_PACKAGE_2"
+    name: "map_apptimus",
+    desc: "A powerful Flutter package for Google Maps integration with built-in search functionality and custom markers.",
+    url: "https://pub.dev/packages/map_apptimus"
   },
   {
     plat: "PyPI · Python",
     icon: <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" style={{ transform: "rotate(180deg)" }}><path d="m18 15-6-6-6 6"/></svg>,
-    name: "Package Name 03",
-    desc: "Python package on PyPI showing cross-language range. Replace with your real package name and description.",
-    url: "https://pypi.org/project/YOUR_PACKAGE_3"
+    name: "Python Utility",
+    desc: "Python packages focused on automation and backend efficiency. Check my PyPI profile for the latest releases.",
+    url: "https://pypi.org/manage/projects/"
   }
 ];
 

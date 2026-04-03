@@ -5,14 +5,13 @@ import Reveal from "./Reveal";
 import styles from "./SocialProfiles.module.css";
 
 const profiles = [
-  { name: "GitHub", handle: "@YOUR_USERNAME", icon: "🐙", url: "https://github.com/YOUR_USERNAME", color: "#f5f5f5" },
-  { name: "GitLab", handle: "@YOUR_USERNAME", icon: "🦊", url: "https://gitlab.com/YOUR_USERNAME", color: "#fff4ee" },
-  { name: "LinkedIn", handle: "Umakaran Ampigaipagan", icon: "🔗", url: "https://linkedin.com/in/YOUR_USERNAME", color: "#e8f4fd" },
+  { name: "GitHub", handle: "@umakaranuma", icon: "🐙", url: "https://github.com/umakaranuma", color: "#f5f5f5" },
+  { name: "GitLab", handle: "@umakaran", icon: "🦊", url: "https://gitlab.com/umakaran", color: "#fff4ee" },
+  { name: "LinkedIn", handle: "Umakaran Ampigaipagan", icon: "🔗", url: "https://www.linkedin.com/in/umakaran-ampigaipagan-a91075213/", color: "#e8f4fd" },
   { name: "Email", handle: "umakaranuma1126@gmail.com", icon: "📧", url: "mailto:umakaranuma1126@gmail.com", color: "var(--teal-tint)" },
-  { name: "pub.dev", handle: "2 packages published", icon: "📦", url: "https://pub.dev/publishers/YOUR_DOMAIN", color: "#e8f0fd" },
-  { name: "PyPI", handle: "1 package published", icon: "🐍", url: "https://pypi.org/user/YOUR_USERNAME", color: "#edf4fb" },
-  { name: "Phone", handle: "+94 76 921 4278", icon: "📞", url: "tel:+94769214278", color: "#f0fdf4" },
-  { name: "Twitter / X", handle: "@YOUR_USERNAME", icon: "𝕏", url: "https://twitter.com/YOUR_USERNAME", color: "#e8f5fe" }
+  { name: "pub.dev", handle: "2 packages published", icon: "📦", url: "https://pub.dev/packages/api_apptimus", color: "#e8f0fd" },
+  { name: "PyPI", handle: "Projects", icon: "🐍", url: "https://pypi.org/manage/projects/", color: "#edf4fb" },
+  { name: "Phone", handle: "+94 76 921 4278", icon: "📞", url: "tel:+94769214278", color: "#f0fdf4" }
 ];
 
 const SocialProfiles = () => {
