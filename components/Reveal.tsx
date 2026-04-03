@@ -6,19 +6,24 @@ interface RevealProps {
   children: React.ReactNode;
   delay?: number;
   className?: string;
+  tag?: keyof JSX.IntrinsicElements;
 }
 
-const Reveal = ({ children, delay = 0, className = "" }: RevealProps) => {
-  const ref = useRef<HTMLDivElement>(null);
+const Reveal = ({ children, delay = 0, className = "", tag = "div" }: RevealProps) => {
+  const ref = useRef<HTMLElement>(null);
+  const Tag = tag;
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("rv-in");
-        }
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in");
+            observer.unobserve(entry.target);
+          }
+        });
       },
-      { threshold: 0.1 }
+      { threshold: 0.07, rootMargin: "0px 0px -30px 0px" }
     );
 
     if (ref.current) {
@@ -33,13 +38,13 @@ const Reveal = ({ children, delay = 0, className = "" }: RevealProps) => {
   }, []);
 
   return (
-    <div
-      ref={ref}
+    <Tag
+      ref={ref as any}
       className={`rv ${className}`}
       style={{ transitionDelay: `${delay}s` }}
     >
       {children}
-    </div>
+    </Tag>
   );
 };
 

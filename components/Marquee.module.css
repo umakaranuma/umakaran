@@ -1,35 +1,39 @@
 .mqWrap {
   background: var(--ink);
-  padding: 0.85rem 0;
+  padding: 1.8rem 0;
   overflow: hidden;
+  display: flex;
+  white-space: nowrap;
+  user-select: none;
+  pointer-events: none;
 }
+
 .mqTrack {
   display: flex;
-  gap: 2.5rem;
-  animation: mq 26s linear infinite;
-  white-space: nowrap;
-  width: fit-content;
+  align-items: center;
+  animation: marquee 35s linear infinite;
 }
-.mqTrack:hover {
-  animation-play-state: paused;
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.33%); }
 }
-@keyframes mq {
-  to { transform: translateX(-50%); }
-}
+
 .mqItem {
+  font-family: var(--ff-m);
+  font-size: 0.82rem;
+  color: #fff;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
   display: flex;
   align-items: center;
-  gap: 0.8rem;
-  font-family: var(--ff-d);
-  font-size: 0.95rem;
-  font-weight: 200;
-  font-style: italic;
-  color: #383835;
-  flex-shrink: 0;
+  margin-right: 3.5rem;
 }
+
 .mqDot {
-  width: 4px;
-  height: 4px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background: var(--teal-3);
+  margin-right: 1.25rem;
 }

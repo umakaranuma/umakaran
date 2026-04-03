@@ -7,18 +7,18 @@ import styles from "./Certifications.module.css";
 const certs = [
   {
     icon: "🎓",
-    name: "Flutter Developer Certification",
-    by: "Course Provider · 2022"
+    name: "Google Associate Android Developer",
+    by: "Google · Certification"
   },
   {
-    icon: "🏢",
-    name: "Enterprise Architecture Patterns",
-    by: "Advanced Engineering · 2023"
+    icon: "📱",
+    name: "Flutter & Dart — The Complete Guide",
+    by: "Udemy · Certification"
   },
   {
-    icon: "🌐",
-    name: "Full-Stack Python Developer",
-    by: "University of Moratuwa · 2021"
+    icon: "🏛️",
+    name: "National Diploma in Technology (IT)",
+    by: "University of Moratuwa · Sri Lanka"
   }
 ];
 
@@ -27,17 +27,17 @@ const Certifications = () => {
     <section className="section">
       <div className="wrap">
         <Reveal className="sec-head">
-          <span className="t-cap">// Recognition</span>
-          <h2 className="t-h1">Certifications</h2>
+          <span className="t-cap">// Credentials</span>
+          <h2 className="t-h1">Certifications<br />&amp; Education</h2>
         </Reveal>
-
+        
         <div className={styles.certGrid}>
-          {certs.map((c, idx) => (
-            <Reveal key={idx} delay={idx * 0.1} className={styles.certCard}>
+          {certs.map((c, i) => (
+            <Reveal key={i} delay={i * 0.1} className={styles.certCard}>
               <div className={styles.certBadge}>{c.icon}</div>
               <div>
-                <div className={styles.certName}>{c.name}</div>
-                <div className={styles.certBy}>{c.by}</div>
+                <h3 className={styles.certName}>{c.name}</h3>
+                <p className={styles.certBy}>{c.by}</p>
               </div>
             </Reveal>
           ))}

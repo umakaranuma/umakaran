@@ -3,22 +3,26 @@
 import React from "react";
 import styles from "./Marquee.module.css";
 
-const Marquee = () => {
-  const items = [
-    "Production-Ready Flutter", "Clean Architecture", "BLoC State Management",
-    "Firebase Ecosystem", "REST API Integration", "App Store Publishing",
-    "Performance Tuning", "Custom App Development"
-  ];
+const items = [
+  "Clean Architecture",
+  "BLoC State Management",
+  "Android & iOS",
+  "Firebase Ecosystem",
+  "CI/CD Pipelines",
+  "Open Source Contributor",
+  "95%+ Test Coverage",
+  "Dart & Flutter Expert"
+];
 
+const Marquee = () => {
   return (
-    <div className={styles.mqWrap}>
+    <div className={styles.mqWrap} aria-hidden="true">
       <div className={styles.mqTrack}>
-        {/* Double the items for seamless loop */}
-        {[...items, ...items].map((text, i) => (
-          <div key={i} className={styles.mqItem}>
-            <div className={styles.mqDot} />
-            {text}
-          </div>
+        {[...items, ...items, ...items].map((item, i) => (
+          <span key={i} className={styles.mqItem}>
+            <span className={styles.mqDot} />
+            {item}
+          </span>
         ))}
       </div>
     </div>

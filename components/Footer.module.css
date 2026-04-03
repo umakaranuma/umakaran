@@ -1,65 +1,209 @@
+.hireSection {
+  background: var(--ink);
+  padding: 8rem 0;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.hireGrid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 6rem;
+  align-items: center;
+}
+
+.hireTitle {
+  font-family: var(--ff-d);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 300;
+  line-height: 1.1;
+  color: #fff;
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+  letter-spacing: -0.04em;
+}
+
+.hireTitle em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--teal-3);
+}
+
+.hireDesc {
+  max-width: 520px;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--ink-4);
+  margin-bottom: 3.5rem;
+}
+
+.contactBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.contactItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.contactLabel {
+  font-family: var(--ff-m);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--teal-3);
+}
+
+.contactValue {
+  font-family: var(--ff-b);
+  font-size: 1.25rem;
+  color: #fff;
+  text-decoration: none;
+  transition: opacity var(--t1) var(--ease);
+}
+
+.contactValue:hover {
+  opacity: 0.7;
+}
+
+.hireCtas {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.btnOutlineW {
+  display: inline-flex;
+  align-items: center;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-family: var(--ff-b);
+  padding: 0.95rem 1.8rem;
+  border-radius: var(--r-f);
+}
+
+.btnOutlineW:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: #fff;
+}
+
+.hireSrvs {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.hSrvCard {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1.5px solid rgba(255, 255, 255, 0.07);
+  padding: 1.8rem 2rem;
+  border-radius: var(--r-xl);
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  transition: all var(--t2) var(--ease);
+}
+
+.hSrvCard:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.15);
+  transform: translateX(8px);
+}
+
+.hSrvIcon {
+  width: 52px;
+  height: 52px;
+  background: rgba(42, 184, 165, 0.12);
+  border-radius: var(--r-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  flex-shrink: 0;
+}
+
+.hSrvLbl {
+  font-family: var(--ff-b);
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 0.4rem;
+}
+
+.hSrvDesc {
+  font-size: 0.84rem;
+  line-height: 1.6;
+  color: var(--ink-4);
+}
+
 .footer {
   background: var(--ink);
   padding: 4rem 0 2rem;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
+  color: var(--ink-4);
 }
+
 .footerInner {
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 var(--s6);
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  align-items: center;
+  gap: 2.5rem;
+  text-align: center;
 }
-.footerTop {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 3rem;
-}
+
 .fBrand {
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-}
-.fLogo {
   font-family: var(--ff-d);
-  font-size: 1.8rem;
-  font-weight: 300;
+  font-size: 1.4rem;
   color: #fff;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.02em;
 }
-.fTag {
-  font-size: 0.88rem;
-  color: rgba(255, 255, 255, 0.4);
-  max-width: 300px;
-  line-height: 1.6;
-}
+
 .fLinks {
   display: flex;
-  gap: 4rem;
-}
-.fCol { display: flex; flex-direction: column; gap: 1rem; }
-.fColH { font-family: var(--ff-m); font-size: 0.72rem; color: var(--teal-3); letter-spacing: 0.1em; text-transform: uppercase; }
-.fA { font-size: 0.88rem; color: rgba(255, 255, 255, 0.7); transition: color var(--t1) var(--ease); }
-.fA:hover { color: #fff; }
-
-.footerBot {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 2rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.5rem;
   font-family: var(--ff-m);
-  font-size: 0.68rem;
-  color: rgba(255, 255, 255, 0.3);
-  letter-spacing: 0.03em;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
 }
-.fCopy { display: flex; align-items: center; gap: 0.5rem; }
-.fHeart { color: #ff4b2b; }
 
-@media (max-width: 900px) {
-  .footerTop { flex-direction: column; gap: 3rem; }
-  .fLinks { gap: 3rem; }
+.fLinks a {
+  color: var(--ink-4);
+  transition: color var(--t1) var(--ease);
 }
-@media (max-width: 600px) { .fLinks { width: 100%; justify-content: space-between; } .footerBot { flex-direction: column; gap: 1rem; align-items: flex-start; } }
+
+.fLinks a:hover {
+  color: #fff;
+}
+
+.fLegal {
+  font-family: var(--ff-m);
+  font-size: 0.65rem;
+  color: rgba(255, 255, 255, 0.18);
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 1100px) {
+  .hireGrid { grid-template-columns: 1fr; gap: 5rem; }
+  .hireInfo, .hireDesc { max-width: 100%; text-align: center; margin-inline: auto; }
+  .contactBlock { align-items: center; }
+  .hireCtas { justify-content: center; }
+  .hSrvCard:hover { transform: translateY(-4px); }
+}
+
+@media (max-width: 600px) {
+  .fLinks { gap: 1.5rem; }
+  .hireCtas { flex-direction: column; width: 100%; gap: 1rem; }
+  .hireCtas > * { width: 100%; text-align: center; justify-content: center; }
+}

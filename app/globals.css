@@ -1,58 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
-  --ink: #0c0c0b;
-  --ink-2: #2e2e28;
-  --ink-3: #616158;
-  --ink-4: #9a9a8e;
-  --ink-5: #c4c4b8;
-  --cream: #faf8f3;
-  --cream-2: #f3f0e7;
-  --cream-3: #e8e3d6;
-  --cream-4: #d5cfc0;
+  /* Colors */
+  --ink: #12120b;
+  --ink-2: #383835;
+  --ink-3: #555552;
+  --ink-4: #8a8a83;
+  --ink-5: #c8c8c5;
   --teal: #1a7a6e;
-  --teal-2: #22998a;
+  --teal-2: #16645a;
   --teal-3: #2ab8a5;
-  --teal-tint: rgba(26, 122, 110, 0.08);
-  --teal-tint2: rgba(26, 122, 110, 0.14);
-  --blue: #1a4fff;
-  --orange: #e8420a;
+  --teal-tint: rgba(26,122,110,.05);
+  --teal-tint2: rgba(42,184,165,.08);
+  --cream: #faf8f3;
+  --cream-2: #f2f0ea;
+  --cream-3: #e8e6df;
+  --cream-4: #d8d6cd;
   --green: #16a34a;
-  --amber: #b45309;
+  --blue: #2563eb;
+  --orange: #ea580c;
+  --amber: #d97706;
   --purple: #7c3aed;
-  
-  /* Fonts will be injected via variable names from Next.js font setup */
-  /* --ff-d, --ff-b, --ff-m are set in RootLayout */
 
-  --s1: 0.25rem;
-  --s2: 0.5rem;
-  --s3: 0.75rem;
-  --s4: 1rem;
-  --s5: 1.5rem;
-  --s6: 2rem;
-  --s7: 3rem;
-  --s8: 4.5rem;
-  --s9: 6rem;
-  
-  --r-sm: 6px;
-  --r-md: 10px;
-  --r-lg: 16px;
-  --r-xl: 22px;
-  --r-f: 9999px;
-  
-  --ease: cubic-bezier(0.16, 1, 0.3, 1);
-  --t1: 160ms;
-  --t2: 300ms;
-}
+  /* Font Families */
+  --ff-d: var(--ff-d-next), "Fraunces", serif;
+  --ff-b: var(--ff-b-next), "DM Sans", sans-serif;
+  --ff-m: var(--ff-m-next), "DM Mono", monospace;
 
-*, *::before, *::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+  /* Spacing */
+  --s1: 0.25rem; --s2: 0.5rem; --s3: 1rem; --s4: 1.5rem; --s5: 2rem;
+  --s6: 2.5rem; --s7: 3rem; --s8: 4rem; --s9: 6rem; --s10: 10rem;
 
-html {
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  /* Radius */
+  --r-sm: 4px; --r-md: 8px; --r-lg: 12px; --r-xl: 18px; --r-f: 9999px;
+
+  /* Animation */
+  --t1: .22s; --t2: .45s; --t3: .85s;
+  --ease: cubic-bezier(.22, 1, .36, 1);
 }
 
 * {
@@ -61,13 +47,110 @@ html {
   margin: 0;
 }
 
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--ff-b);
+  -webkit-font-smoothing: antialiased;
+}
+
 a {
   color: inherit;
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+.wrap {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 var(--s6);
+}
+
+.section {
+  padding: 6.5rem 0;
+}
+
+.section--alt {
+  background: var(--cream-2);
+}
+
+/* Scroll Reveal */
+.rv {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: all var(--t3) var(--ease);
+}
+
+.rv.in {
+  opacity: 1;
+  transform: none;
+}
+
+/* Global Button Styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.95rem 1.8rem;
+  border-radius: var(--r-f);
+  font-family: var(--ff-b);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all var(--t1) var(--ease);
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.btn--teal {
+  background: var(--teal);
+  color: #fff;
+}
+
+.btn--teal:hover {
+  background: var(--teal-2);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(26, 122, 110, 0.2);
+}
+
+.chip {
+  display: inline-flex;
+  font-family: var(--ff-m);
+  font-size: 0.71rem;
+  padding: 0.24rem 0.65rem;
+  border-radius: var(--r-f);
+  background: var(--cream-2);
+  border: 1px solid var(--cream-3);
+  color: var(--ink-3);
+}
+
+.chip--teal {
+  background: var(--teal-tint);
+  border-color: rgba(26, 122, 110, 0.15);
+  color: var(--teal);
+}
+
+.t-cap {
+  font-family: var(--ff-m);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-4);
+}
+
+.t-h1 {
+  font-family: var(--ff-d);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 300;
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+  color: var(--ink);
+}
+
+/* Navbar Scrolled State */
+#nav.scrolled {
+  background: rgba(250, 248, 243, 0.92);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--cream-3);
+  padding: 1.2rem 0;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
 }

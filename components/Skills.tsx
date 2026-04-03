@@ -4,61 +4,60 @@ import React from "react";
 import Reveal from "./Reveal";
 import styles from "./Skills.module.css";
 
+const skillGroups = [
+  {
+    label: "Mobile Development",
+    skills: ["Flutter", "Dart", "Clean Architecture", "BLoC State Management", "Android SDK", "iOS / Xcode", "Firebase Ecosystem", "REST APIs / Dio"]
+  },
+  {
+    label: "Tools & Ecosystem",
+    skills: ["Git / GitHub / GitLab", "CI/CD Pipelines", "Stripe / Payment Gateways", "SQLite / Hive / local storage", "Ably WebSockets", "PyPI / Pub.dev Publishing", "Agile / Scrum / Jira"]
+  }
+];
+
+const learning = [
+  { icon: "📊", name: "GraphQL & Apollo" },
+  { icon: "☁️", name: "Advanced DevOps" },
+  { icon: "🐳", name: "Docker & Microservices" }
+];
+
 const Skills = () => {
   return (
     <section className="section section--alt" id="skills">
       <div className="wrap">
         <Reveal className="sec-head">
           <span className="t-cap">// Expertise</span>
-          <h2 className="t-h1">Technical Skills</h2>
+          <h2 className="t-h1">Technical<br />Skill-set</h2>
         </Reveal>
 
         <div className={styles.skillsWrap}>
-          <div>
-            <div className={styles.skLabelRow}>
-              <span className={styles.skSubBadge}>Core Mobile</span>
+          {skillGroups.map((group, i) => (
+            <div key={group.label} className={styles.skillSection}>
+              <Reveal delay={i * 0.1}>
+                <span className={styles.skSubBadge}>{group.label}</span>
+                <div className={styles.skPills}>
+                  {group.skills.map((skill, idx) => (
+                    <Reveal key={skill} delay={idx * 0.05} className="chip">
+                      {skill}
+                    </Reveal>
+                  ))}
+                </div>
+              </Reveal>
             </div>
-            <div className={styles.skPills}>
-              <div className={styles.skPill}><span>💙</span> Flutter</div>
-              <div className={styles.skPill}><span>🎯</span> Dart</div>
-              <div className={styles.skPill}><span>🧩</span> BLoC / Provider</div>
-              <div className={styles.skPill}><span>🏗️</span> Clean Arch</div>
-              <div className={styles.skPill}><span>📦</span> Pub.dev</div>
-              <div className={styles.skPill}><span>📱</span> Android/iOS</div>
-            </div>
+          ))}
+        </div>
 
-            <div className={styles.skLabelRow} style={{ marginTop: "2rem" }}>
-              <span className={styles.skSubBadge}>Backend &amp; Infra</span>
-            </div>
-            <div className={styles.skPills}>
-              <div className={styles.skPill}><span>🔥</span> Firebase</div>
-              <div className={styles.skPill}><span>🐍</span> Python / Django</div>
-              <div className={styles.skPill}><span>🗄️</span> SQLite / Hive</div>
-              <div className={styles.skPill}><span>🌐</span> REST / GraphQL</div>
-              <div className={styles.skPill}><span>🚢</span> CI/CD (GitHub)</div>
-              <div className={styles.skPill}><span>☁️</span> Google Cloud</div>
-            </div>
-          </div>
-
-          <div>
-            <div className={styles.skLabelRow}>
-              <span className={styles.skSubBadge}>Specialized</span>
-            </div>
-            <div className={`${styles.skPills} ${styles.skPills2}`}>
-              <div className={styles.skPill}><span>🔌</span> WebSockets (Ably)</div>
-              <div className={styles.skPill}><span>💳</span> Stripe / Payments</div>
-              <div className={styles.skPill}><span>🗺️</span> Google Maps API</div>
-              <div className={styles.skPill}><span>📊</span> Crashlytics / Analytics</div>
-            </div>
-
-            <div className={styles.skLabelRow} style={{ marginTop: "2rem" }}>
-              <span className={styles.skSubBadge}>Currently Learning</span>
-            </div>
-            <div className={styles.learnPills}>
-              <div className={styles.learnPill}><span>🦀</span> Rust</div>
-              <div className={styles.learnPill}><span>⚛️</span> React/Next.js</div>
-              <div className={styles.learnPill}><span>🧠</span> AI Integration</div>
-            </div>
+        <div className={styles.learningSection}>
+          <Reveal className={styles.learningHead}>
+            <span className="t-cap" style={{ marginBottom: "1.2rem", display: "block" }}>Currently exploring</span>
+          </Reveal>
+          <div className={styles.learnPills}>
+            {learning.map((l, i) => (
+              <Reveal key={l.name} delay={i * 0.1} className={styles.learnPill}>
+                <span>{l.icon}</span>
+                {l.name}
+              </Reveal>
+            ))}
           </div>
         </div>
       </div>

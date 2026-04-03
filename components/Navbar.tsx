@@ -5,34 +5,41 @@ import Link from "next/link";
 import styles from "./Navbar.module.css";
 
 const Navbar = () => {
-  const [scrolled, setScrolled] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 20);
     };
-    window.addEventListener("scroll", handleScroll);
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ""}`} id="nav">
+    <nav 
+      id="nav" 
+      className={`${styles.nav} ${isScrolled ? "scrolled" : ""}`}
+    >
       <div className={styles.navInner}>
-        <Link href="/" className={styles.navBrand} aria-label="Home">
+        <Link href="/" className={styles.brand}>
           <div className={styles.navAv}>
             <span className={styles.navAvI}>UA</span>
           </div>
           <span className={styles.navName}>Umakaran A.</span>
         </Link>
-        <ul className={styles.navLinks}>
-          <li><Link href="#about"      className={styles.navA}>About</Link></li>
-          <li><Link href="#services"   className={styles.navA}>Services</Link></li>
-          <li><Link href="#work"       className={styles.navA}>Work</Link></li>
-          <li><Link href="#skills"     className={styles.navA}>Skills</Link></li>
-          <li><Link href="#experience" className={styles.navA}>Experience</Link></li>
-          <li><Link href="#oss"        className={styles.navA}>Open Source</Link></li>
-          <li><Link href="#hire"       className={styles.navHire}>Hire Me</Link></li>
-        </ul>
+
+        <div className={styles.links}>
+          <a href="#about" className={styles.link}>About</a>
+          <a href="#services" className={styles.link}>Services</a>
+          <a href="#work" className={styles.link}>Work</a>
+          <a href="#skills" className={styles.link}>Skills</a>
+          <a href="#experience" className={styles.link}>Experience</a>
+          <a href="#oss" className={styles.link}>Open Source</a>
+          <a href="#hire" className="btn btn--teal">
+            Hire Me
+          </a>
+        </div>
       </div>
     </nav>
   );

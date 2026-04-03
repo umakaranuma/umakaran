@@ -1,32 +1,73 @@
-.profGrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.85rem; }
+.profGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.15rem;
+}
+
 .profCard {
   background: #fff;
   border: 1px solid var(--cream-3);
-  border-radius: var(--r-lg);
-  transition: all var(--t1) var(--ease);
+  border-radius: var(--r-xl);
+  padding: 1.25rem 1.4rem;
+  display: block;
+  transition: all var(--t2) var(--ease);
+  cursor: pointer;
+  text-decoration: none;
 }
-.profCardInner {
-    display: flex;
-    align-items: center;
-    gap: 0.85rem;
-    padding: 1.25rem;
-    width: 100%;
-    text-decoration: none;
+
+.profCard:hover {
+  border-color: var(--ink);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.06);
 }
-.profCard:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(12, 12, 11, 0.08); border-color: var(--teal-3); }
+
+.profInner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 .profIcon {
-  width: 40px;
-  height: 40px;
-  border-radius: var(--r-sm);
+  width: 48px;
+  height: 48px;
+  border-radius: var(--r-lg);
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 1.5rem;
   flex-shrink: 0;
 }
-.profName { font-family: var(--ff-b); font-size: 0.93rem; font-weight: 600; color: var(--ink); }
-.profHandle { font-family: var(--ff-m); font-size: 0.66rem; color: var(--ink-4); }
-.profArrow { font-size: 0.9rem; color: var(--ink-5); margin-left: auto; transition: color var(--t1) var(--ease); }
-.profCard:hover .profArrow { color: var(--ink-3); }
 
-@media (max-width: 1100px) { .profGrid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 700px) { .profGrid { grid-template-columns: 1fr; } }
+.profName {
+  font-family: var(--ff-b);
+  font-size: 0.93rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.profHandle {
+  font-family: var(--ff-m);
+  font-size: 0.66rem;
+  color: var(--ink-4);
+  margin-top: 0.1rem;
+}
+
+.profArrow {
+  font-size: 0.95rem;
+  color: var(--ink-5);
+  margin-left: auto;
+  transition: color var(--t1) var(--ease);
+}
+
+.profCard:hover .profArrow {
+  color: var(--ink-3);
+  transform: translate(2px, -2px);
+}
+
+@media (max-width: 1000px) {
+  .profGrid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 600px) {
+  .profGrid { grid-template-columns: 1fr; }
+}
