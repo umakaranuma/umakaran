@@ -20,7 +20,7 @@ const projects = [
     name: "Ryba",
     desc: "Real-time messaging with Ably WebSockets, offline SQLite caching, and push notifications. Zero message loss on poor connectivity.",
     tags: ["Ably", "SQLite", "BLoC", "FCM", "Offline-first"],
-    origin: "Apptimus Tech"
+    origin: "Apptimus Tech (Pvt) Ltd."
   },
   {
     num: "03",
@@ -28,7 +28,7 @@ const projects = [
     name: "MedLearning",
     desc: "Subscription medical e-learning with video streaming, Stripe billing, progress tracking & offline Hive caching.",
     tags: ["Stripe", "Firebase", "Video Streaming", "Hive"],
-    origin: "Apptimus Tech"
+    origin: "Code94 Labs (Pvt) Ltd · Contract"
   },
   {
     num: "04",
@@ -36,7 +36,7 @@ const projects = [
     name: "Empower",
     desc: "Workflow-based assistance management system with advanced state orchestration and modular Clean Architecture.",
     tags: ["Workflow Engine", "Clean Arch", "MVVM"],
-    origin: "Code94 Labs · Contract"
+    origin: "Apptimus Tech (Pvt) Ltd."
   },
   {
     num: "05",
