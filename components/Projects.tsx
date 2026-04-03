@@ -46,6 +46,57 @@ const projects = [
     tags: ["Flutter", "Firebase", "Solo-built", "Published"],
     origin: "Live",
     live: true
+  },
+  {
+    num: "06",
+    kick: "E-Learning Platform",
+    name: "Moura",
+    desc: "Online e-learning platform enabling educational content delivery, course management, and progress tracking for learners.",
+    tags: ["Flutter", "E-Learning", "REST API", "Clean Architecture"],
+    origin: "Apptimus Tech (Pvt) Ltd."
+  },
+  {
+    num: "07",
+    kick: "Lead Management System",
+    name: "Envoy",
+    desc: "Lead management system for finance and insurance companies, built with Django backend to track leads through the sales pipeline.",
+    tags: ["Django", "Python", "REST API", "Lead Management"],
+    origin: "Apptimus Tech (Pvt) Ltd."
+  },
+  {
+    num: "08",
+    kick: "AI-Powered English Learning",
+    name: "Tuty",
+    desc: "AI-powered online English learning platform mobile application, helping learners improve English with personalized lessons.",
+    tags: ["Flutter", "AI", "English Learning", "Mobile"],
+    origin: "Apptimus Tech (Pvt) Ltd."
+  },
+  {
+    num: "09",
+    kick: "Personal · Money Manager",
+    name: "Finzo",
+    desc: "Personal finance management app to track expenses, manage budgets, and monitor savings with intuitive charts.",
+    tags: ["Flutter", "Provider", "Charts", "Local Storage"],
+    origin: "Personal Project",
+    live: true
+  },
+  {
+    num: "10",
+    kick: "Personal · Photo Editor",
+    name: "Snap Champ",
+    desc: "Powerful photo editing application with filters, adjustments, and creative tools to transform photos with ease.",
+    tags: ["Flutter", "Image Processing", "Filters", "Canvas"],
+    origin: "Personal Project",
+    live: true
+  },
+  {
+    num: "11",
+    kick: "Personal · MP3 Player",
+    name: "Tunee",
+    desc: "Sleek and feature-rich music player with playlist management, equalizer controls, and seamless audio playback.",
+    tags: ["Flutter", "Audio Player", "Equalizer", "Playlist"],
+    origin: "Personal Project",
+    live: true
   }
 ];
 
