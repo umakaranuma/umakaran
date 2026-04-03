@@ -6,7 +6,7 @@ interface RevealProps extends React.HTMLAttributes<HTMLElement> {
   children: React.ReactNode;
   delay?: number;
   className?: string;
-  tag?: keyof JSX.IntrinsicElements;
+  tag?: React.ElementType;
   [key: string]: any;
 }
 
