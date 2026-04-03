@@ -16,9 +16,11 @@ const About = () => {
         <div className={styles.aboutGrid}>
           <div className={styles.aboutContent}>
             <Reveal delay={0.1} className={styles.aboutText}>
-              <p>I&apos;m a Senior Flutter Developer with 3+ years building production-grade mobile applications for Android and iOS. I specialise in <strong>Clean Architecture</strong> and <strong>BLoC state management</strong> — the kind that stays maintainable six months after launch.</p>
-              <p>My work spans e-commerce platforms, real-time messaging, subscription-based learning, and enterprise workflow engines — each one deployed and actively used. I lead all phases: architecture decisions, CI/CD setup, to App Store and Play Store publishing.</p>
-              <p>Beyond writing code, I establish team standards, mentor junior developers, and maintain open-source packages on Pub.dev and PyPI.</p>
+              <p>I’m a Senior Flutter Developer with 3+ years of experience building and delivering production-grade mobile applications for Android and iOS.</p>
+              <p>I specialize in scalable architectures using <strong>Clean Architecture</strong> and <strong>BLoC</strong> — ensuring codebases remain maintainable, testable, and reliable long after release.</p>
+              <p>I’ve developed and shipped applications across e-commerce, real-time messaging, subscription-based platforms, and enterprise systems, all actively used in production environments.</p>
+              <p>I take ownership of the full development lifecycle — from system design and architecture decisions to CI/CD pipelines and App Store / Play Store deployments.</p>
+              <p>Beyond development, I contribute to team growth by defining coding standards, mentoring developers, and maintaining open-source packages on Pub.dev and PyPI.</p>
             </Reveal>
 
             <div className={styles.aboutChips}>
