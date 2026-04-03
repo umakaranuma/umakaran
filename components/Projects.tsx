@@ -38,17 +38,9 @@ const projects = [
     tags: ["Workflow Engine", "Clean Arch", "MVVM"],
     origin: "Apptimus Tech (Pvt) Ltd."
   },
+
   {
     num: "05",
-    kick: "Personal · Live in production",
-    name: "Personal App",
-    desc: "Solo-built Flutter app — full product lifecycle from architecture to App Store & Play Store publishing.",
-    tags: ["Flutter", "Firebase", "Solo-built", "Published"],
-    origin: "Live",
-    live: true
-  },
-  {
-    num: "06",
     kick: "E-Learning Platform",
     name: "Moura",
     desc: "Online e-learning platform enabling educational content delivery, course management, and progress tracking for learners.",
@@ -56,7 +48,7 @@ const projects = [
     origin: "Apptimus Tech (Pvt) Ltd."
   },
   {
-    num: "07",
+    num: "06",
     kick: "Lead Management System",
     name: "Envoy",
     desc: "Lead management system for finance and insurance companies, built with Django backend to track leads through the sales pipeline.",
@@ -64,7 +56,7 @@ const projects = [
     origin: "Apptimus Tech (Pvt) Ltd."
   },
   {
-    num: "08",
+    num: "07",
     kick: "AI-Powered English Learning",
     name: "Tuty",
     desc: "AI-powered online English learning platform mobile application, helping learners improve English with personalized lessons.",
@@ -72,7 +64,7 @@ const projects = [
     origin: "Apptimus Tech (Pvt) Ltd."
   },
   {
-    num: "09",
+    num: "08",
     kick: "Personal · Money Manager",
     name: "Finzo",
     desc: "Personal finance management app to track expenses, manage budgets, and monitor savings with intuitive charts.",
@@ -81,7 +73,7 @@ const projects = [
     live: true
   },
   {
-    num: "10",
+    num: "09",
     kick: "Personal · Photo Editor",
     name: "Snap Champ",
     desc: "Powerful photo editing application with filters, adjustments, and creative tools to transform photos with ease.",
@@ -90,7 +82,7 @@ const projects = [
     live: true
   },
   {
-    num: "11",
+    num: "10",
     kick: "Personal · MP3 Player",
     name: "Tunee",
     desc: "Sleek and feature-rich music player with playlist management, equalizer controls, and seamless audio playback.",
